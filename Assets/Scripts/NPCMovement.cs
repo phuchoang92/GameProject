@@ -22,6 +22,15 @@ public class NPCMovement : MonoBehaviour
     void Update()
     {
         agent.SetDestination(destinationObject.transform.position);
+        UpdateAnimator();
+    }
+
+    private void UpdateAnimator()
+    {
+        Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
+        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+        float speed = localVelocity.z;
+        GetComponent<Animator>().SetFloat("Running", speed);
     }
 
 }
