@@ -14,7 +14,7 @@ public class Mover : MonoBehaviour
         {
             MoveToCursor();
         }
-        UpdateAnimator();
+        //UpdateAnimator();
     }
 
     private void MoveToCursor()
