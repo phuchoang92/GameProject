@@ -26,7 +26,7 @@ public class Mover : MonoBehaviour, IAction
     // Update is called once per frame  
     void Update()
     {
-        navMeshAgent.isStopped = false;
+        //navMeshAgent.isStopped = false;
         if (InteractWithCombat()) 
         {
             return;

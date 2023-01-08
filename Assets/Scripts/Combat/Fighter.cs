@@ -4,16 +4,19 @@ public class Fighter : MonoBehaviour, IAction
 {
     [SerializeField] float weaponRange = 2f;
     [SerializeField] float timeBetweenAtk = 1f;
-    Transform target;
+    [SerializeField] float weaponDamage = 10f;
+    Health target;
     float timeSinceLastAttack = 0;
     private void Update()
     {
         timeSinceLastAttack += Time.deltaTime;
         if (target == null) return;
 
+        if (target.isDead()) return;
+
         if(!isInRange())
         {
-            GetComponent<Mover>().MoveTo(target.position);
+            GetComponent<Mover>().MoveTo(target.transform.position);
         }
         else
         {
@@ -31,17 +34,26 @@ public class Fighter : MonoBehaviour, IAction
         }
     }
 
+    private void Hit()
+    {
+        if (target != null)
+        {
+            target.TakeDamage(weaponDamage);
+        }
+    }
+
     private bool isInRange()
     {
-        return Vector3.Distance(transform.position, target.position) < weaponRange;
+        return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
     }
     public void Attack(CombatTarget combatTarget)
     {
         GetComponent<ActionScheduler>().StartAction(this);
-        target = combatTarget.transform;
+        target = combatTarget.GetComponent<Health>();
     }
     public void Cancel()
     {
+        GetComponent<Animator>().SetTrigger("stopAttack");
         target = null;
     }
 }
