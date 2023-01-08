@@ -27,21 +27,31 @@ public class Fighter : MonoBehaviour, IAction
 
     private void AttackBehaviour()
     {
+        transform.LookAt(target.transform);
         if(timeSinceLastAttack > timeBetweenAtk)
         {
-            GetComponent<Animator>().SetTrigger("attack");
+            TriggerAttack();
             timeSinceLastAttack = 0;
         }
     }
 
-    private void Hit()
+    private void TriggerAttack()
     {
-        if (target != null)
-        {
-            target.TakeDamage(weaponDamage);
-        }
+        GetComponent<Animator>().ResetTrigger("stopAttack");
+        GetComponent<Animator>().SetTrigger("attack");
     }
 
+    private void Hit()
+    {
+        if (target == null) return;
+        target.TakeDamage(weaponDamage);
+    }
+
+    public bool CanAttack(CombatTarget combatTarget)
+    {
+        Health target = combatTarget.GetComponent<Health>();
+        return target != null && !target.isDead();
+    }
     private bool isInRange()
     {
         return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
@@ -53,6 +63,7 @@ public class Fighter : MonoBehaviour, IAction
     }
     public void Cancel()
     {
+        GetComponent<Animator>().ResetTrigger("attack");
         GetComponent<Animator>().SetTrigger("stopAttack");
         target = null;
     }

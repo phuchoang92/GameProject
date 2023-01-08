@@ -47,7 +47,7 @@ public class Mover : MonoBehaviour, IAction
         foreach (RaycastHit hit in hits)
         {
             CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-            if (target == null)
+            if (target == null || !target.GetComponent<Fighter>().CanAttack(target))
             {
                 continue;
             }
