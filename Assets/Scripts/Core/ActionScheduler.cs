@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionScheduler : MonoBehaviour
+namespace Game.Core
 {
-    IAction currentAction;
-    public void StartAction(IAction action)
+    public class ActionScheduler : MonoBehaviour
     {
-        if(currentAction == action)
+        IAction currentAction;
+        public void StartAction(IAction action)
         {
-            return;
+            if (currentAction == action)
+            {
+                return;
+            }
+            if (currentAction != null)
+            {
+                currentAction.Cancel();
+            }
+            currentAction = action;
         }
-        if(currentAction!= null )
-        {
-            currentAction.Cancel();
-        }
-        currentAction = action;
     }
 }
