@@ -9,7 +9,7 @@ namespace Game.Combat
         [SerializeField] float timeBetweenAtk = 1f;
         [SerializeField] float weaponDamage = 10f;
         Health target;
-        float timeSinceLastAttack = 0;
+        float timeSinceLastAttack = Mathf.Infinity;
         private void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
@@ -50,7 +50,7 @@ namespace Game.Combat
             target.TakeDamage(weaponDamage);
         }
 
-        public bool CanAttack(CombatTarget combatTarget)
+        public bool CanAttack(GameObject combatTarget)
         {
             Health target = combatTarget.GetComponent<Health>();
             return target != null && !target.isDead();
@@ -59,7 +59,7 @@ namespace Game.Combat
         {
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();

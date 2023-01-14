@@ -19,5 +19,10 @@ namespace Game.Core
             }
             currentAction = action;
         }
+
+        public void CancelAction()
+        {
+            StartAction(null);
+        }
     }
 }

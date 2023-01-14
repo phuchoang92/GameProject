@@ -320,6 +320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrontGuard2
       objectReference: {fileID: 0}
+    - target: {fileID: 127338, guid: 360c73b9bf9a34d4c84bc0581d0499eb, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 402538, guid: 360c73b9bf9a34d4c84bc0581d0499eb, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -2228,7 +2232,7 @@ GameObject:
   - component: {fileID: 322650792}
   m_Layer: 0
   m_Name: Patrol
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4709,6 +4713,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 452522, guid: 9459e0f93798ac2499a434a3359611df, type: 3}
   m_PrefabInstance: {fileID: 771447535}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &774115759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5715793352856130091, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+  m_PrefabInstance: {fileID: 912793207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &774115769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774115759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13190d75f2ebc8f48bd1b70b9a70f7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 6
 --- !u!1 &776674557
 GameObject:
   m_ObjectHideFlags: 0
@@ -6005,6 +6027,14 @@ PrefabInstance:
     - target: {fileID: 5715793352856130091, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: weaponDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715793352856130101, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: m_Speed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5715793352856130103, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: m_RootOrder
@@ -10037,6 +10067,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 431292, guid: 50fd4d5e47893ad4f94f3e1d72310046, type: 3}
   m_PrefabInstance: {fileID: 1217946276}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1246679492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5715793352856130091, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+  m_PrefabInstance: {fileID: 1476885189}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1246679502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246679492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13190d75f2ebc8f48bd1b70b9a70f7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 5
 --- !u!1001 &1263631008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11380,6 +11428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrontGuard
       objectReference: {fileID: 0}
+    - target: {fileID: 142034, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 409984, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.75542575
@@ -11597,6 +11649,14 @@ PrefabInstance:
     - target: {fileID: 5715793352856130091, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: weaponDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715793352856130101, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: m_Speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5715793352856130103, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: m_RootOrder
@@ -13574,6 +13634,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: weaponDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715793352856130101, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5715793352856130103, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -15018,6 +15086,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7375511027429792165, guid: 724216583c7289246bb742446ac5ee63, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375511027429792165, guid: 724216583c7289246bb742446ac5ee63, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7375511027429792185, guid: 724216583c7289246bb742446ac5ee63, type: 3}
@@ -16761,6 +16833,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a51e637558ff04895a354af9c4b59f, type: 3}
+--- !u!1 &1831726735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5715793352856130091, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+  m_PrefabInstance: {fileID: 1687040710}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1831726745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831726735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13190d75f2ebc8f48bd1b70b9a70f7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 5
 --- !u!1001 &1845481836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18125,7 +18215,7 @@ GameObject:
   - component: {fileID: 2057886761}
   m_Layer: 0
   m_Name: Craftsman
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

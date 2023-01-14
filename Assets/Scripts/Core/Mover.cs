@@ -12,9 +12,10 @@ namespace Game.Movement
 
         [SerializeField] Transform target;
         NavMeshAgent navMeshAgent;
-
+        //Health health;
         void Update()
         {
+            //navMeshAgent.enabled = !health.isDead();
             UpdateAnimator();
         }
 
@@ -27,6 +28,7 @@ namespace Game.Movement
         private void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
+            //health = GetComponent<Health>();
         }
 
         public void Cancel()
