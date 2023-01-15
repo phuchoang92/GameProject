@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using Game.Combat;
 using Game.Movement;
+using Game.Core;
 
 namespace Game.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        Health health;
         // Start is called before the first frame update
         public void Start()
         {
-
+            health= GetComponent<Health>();
         }
 
         // Update is called once per frame
         public void Update()
         {
+            if (health.isDead()) return;
             if (InteractWithCombat())
             {
                 return;
@@ -33,13 +36,17 @@ namespace Game.Control
             foreach (RaycastHit hit in hits)
             {
                 CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                if (target == null || !target.GetComponent<Fighter>().CanAttack(target))
+                if (target == null)  
+                {
+                    continue;
+                }
+                if (!target.GetComponent<Fighter>().CanAttack(target.gameObject))
                 {
                     continue;
                 }
                 if (Input.GetMouseButtonDown(0))
                 {
-                    GetComponent<Fighter>().Attack(target);
+                    GetComponent<Fighter>().Attack(target.gameObject);
                 }
                 return true;
             }
