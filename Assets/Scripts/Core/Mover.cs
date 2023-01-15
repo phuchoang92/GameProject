@@ -38,7 +38,7 @@ namespace Game.Movement
 
         public void MoveTo(Vector3 des)
         {
-            GetComponent<NavMeshAgent>().destination = des;
+            navMeshAgent.destination = des;
             navMeshAgent.isStopped = false;
         }
 

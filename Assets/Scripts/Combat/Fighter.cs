@@ -10,6 +10,7 @@ namespace Game.Combat
         [SerializeField] float weaponDamage = 10f;
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
+        bool isAttacking = false;
         private void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
@@ -19,6 +20,7 @@ namespace Game.Combat
 
             if (!isInRange())
             {
+                if(isAttacking) { return; }
                 GetComponent<Game.Movement.Mover>().MoveTo(target.transform.position);
             }
             else
@@ -40,6 +42,7 @@ namespace Game.Combat
 
         private void TriggerAttack()
         {
+            isAttacking = true;
             GetComponent<Animator>().ResetTrigger("stopAttack");
             GetComponent<Animator>().SetTrigger("attack");
         }
@@ -47,7 +50,15 @@ namespace Game.Combat
         private void Hit()
         {
             if (target == null) return;
-            target.TakeDamage(weaponDamage);
+            if (isInRange())
+            {
+                target.TakeDamage(weaponDamage);
+            }
+            else
+            {
+                Cancel();
+            }
+            isAttacking= false;
         }
 
         public bool CanAttack(GameObject combatTarget)
@@ -69,6 +80,7 @@ namespace Game.Combat
             GetComponent<Animator>().ResetTrigger("attack");
             GetComponent<Animator>().SetTrigger("stopAttack");
             target = null;
+            isAttacking = false;
         }
     }
 }
