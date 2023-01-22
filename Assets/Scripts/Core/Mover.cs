@@ -21,7 +21,6 @@ namespace Game.Movement
 
         public void StartMoveAction(Vector3 des)
         {
-            print(des.ToString());
             GetComponent<ActionScheduler>().StartAction(this);
             MoveTo(des);
         }
@@ -39,7 +38,6 @@ namespace Game.Movement
 
         public void MoveTo(Vector3 des)
         {
-            print("moved");
             navMeshAgent.destination = des;
             navMeshAgent.isStopped = false;
         }
