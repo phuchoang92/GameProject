@@ -9,7 +9,9 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        { SceneManager.LoadScene(sceneToLoad); }
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("1");
+            SceneManager.LoadScene(sceneToLoad); }
     }
 }
