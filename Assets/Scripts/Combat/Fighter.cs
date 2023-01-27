@@ -1,16 +1,24 @@
 using Game.Core;
+using System;
 using UnityEngine;
 
 namespace Game.Combat
 {
     public class Fighter : MonoBehaviour, IAction
     {
-        [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAtk = 1f;
-        [SerializeField] float weaponDamage = 10f;
+        [SerializeField] Transform handTransform = null;
+        [SerializeField] Weapon weapon = null;
+
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
         bool isAttacking = false;
+        Weapon currentWeapon= null;
+        private void Start()
+        {
+            EquipWeapon(weapon);
+        }
+
         private void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
@@ -21,13 +29,20 @@ namespace Game.Combat
             if (!isInRange())
             {
                 if(isAttacking) { return; }
-                GetComponent<Game.Movement.Mover>().MoveTo(target.transform.position);
+                GetComponent<Movement.Mover>().MoveTo(target.transform.position);
             }
             else
             {
-                GetComponent<Game.Movement.Mover>().Cancel();
+                GetComponent<Movement.Mover>().Cancel();
                 AttackBehaviour();
             }
+        }
+
+        public void EquipWeapon(Weapon weapon)
+        {
+            currentWeapon = weapon;
+            Animator animator = GetComponent<Animator>();
+            currentWeapon.Spawn(handTransform, animator);
         }
 
         private void AttackBehaviour()
@@ -52,7 +67,7 @@ namespace Game.Combat
             if (target == null) return;
             if (isInRange())
             {
-                target.TakeDamage(weaponDamage);
+                target.TakeDamage(currentWeapon.GetDamage());
             }
             else
             {
@@ -68,7 +83,7 @@ namespace Game.Combat
         }
         private bool isInRange()
         {
-            return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
+            return Vector3.Distance(transform.position, target.transform.position) < currentWeapon.GetRange();
         }
         public void Attack(GameObject combatTarget)
         {
