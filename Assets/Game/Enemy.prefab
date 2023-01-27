@@ -51,6 +51,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 579941082203244643, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: m_Speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 57a795c74040c484e871fa98d1cac8f4, type: 2}
+    - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 57a795c74040c484e871fa98d1cac8f4, type: 2}
     - target: {fileID: 579941082203244669, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: m_Name
       value: Enemy
