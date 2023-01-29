@@ -57,6 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ff9e4b8027e4b54ba8cccf95fad6052, type: 3}
+--- !u!4 &2987191710898456973 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 418092, guid: 6ff9e4b8027e4b54ba8cccf95fad6052, type: 3}
+  m_PrefabInstance: {fileID: 2987191710898874529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2987191710898525473 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 490880, guid: 6ff9e4b8027e4b54ba8cccf95fad6052, type: 3}
@@ -116,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 11400000, guid: fe77c8144f8ddce41b37c2d853061487, type: 2}
+      objectReference: {fileID: 11400000, guid: df5d7c9d703c92a42aab2b62f1967a23, type: 2}
     - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: weaponRange
       value: 2.5
@@ -133,6 +138,14 @@ PrefabInstance:
       propertyPath: weaponOverride
       value: 
       objectReference: {fileID: 22100000, guid: 8d6c10c0a0275e64ca3e5c7dfedeffa8, type: 2}
+    - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 2987191710898456973}
+    - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 2987191710898525473}
     - target: {fileID: 579941082203244669, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -144,6 +157,14 @@ PrefabInstance:
     - target: {fileID: 2302040003267658296, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139406505481747390, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: m_Height
+      value: 2.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139406505481747390, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: m_Center.y
+      value: 1.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
