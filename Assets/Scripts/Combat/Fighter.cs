@@ -7,7 +7,8 @@ namespace Game.Combat
     public class Fighter : MonoBehaviour, IAction
     {
         [SerializeField] float timeBetweenAtk = 1f;
-        [SerializeField] Transform handTransform = null;
+        [SerializeField] Transform rightHandTransform = null;
+        [SerializeField] Transform leftHandTransform = null;
         [SerializeField] Weapon weapon = null;
 
         Health target;
@@ -42,7 +43,7 @@ namespace Game.Combat
         {
             currentWeapon = weapon;
             Animator animator = GetComponent<Animator>();
-            currentWeapon.Spawn(handTransform, animator);
+            currentWeapon.Spawn(rightHandTransform,leftHandTransform, animator);
         }
 
         private void AttackBehaviour()
@@ -65,15 +66,26 @@ namespace Game.Combat
         private void Hit()
         {
             if (target == null) return;
-            if (isInRange())
+
+            if (currentWeapon.HasProjectile())
+            {
+                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
+            }
+            //if (isInRange())
+            else
             {
                 target.TakeDamage(currentWeapon.GetDamage());
             }
-            else
-            {
-                Cancel();
-            }
+            //else
+            //{
+            //    Cancel();
+            //}
             isAttacking= false;
+        }
+
+        private void Shoot()
+        {
+            Hit();
         }
 
         public bool CanAttack(GameObject combatTarget)
