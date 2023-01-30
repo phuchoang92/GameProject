@@ -24,10 +24,10 @@ namespace Game.Control
             {
                 return;
             }
-            if (InteractWithPickups())
-            {
-                return;
-            }
+            //if (InteractWithPickups())
+            //{
+                //return;
+            //}
             if (InteractWithMovement())
             {
                 return;
@@ -56,7 +56,7 @@ namespace Game.Control
             }
             return false;
         }
-        
+        /*
         private bool InteractWithPickups()
         {
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
@@ -76,7 +76,7 @@ namespace Game.Control
                 return true;
             }
             return false;
-        }
+        }*/
         private bool InteractWithMovement()
         {
             RaycastHit hit;
