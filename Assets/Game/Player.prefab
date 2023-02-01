@@ -121,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 11400000, guid: df5d7c9d703c92a42aab2b62f1967a23, type: 2}
+      objectReference: {fileID: 11400000, guid: fe77c8144f8ddce41b37c2d853061487, type: 2}
     - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: weaponRange
       value: 2.5
@@ -173,6 +173,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 579941082203244669, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
   m_PrefabInstance: {fileID: 7950904364104454616}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &-9061622436296281934
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7375511027429792165}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &948196860018799620
 MonoBehaviour:
   m_ObjectHideFlags: 0
