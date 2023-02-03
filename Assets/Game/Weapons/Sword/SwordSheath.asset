@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8aeda86a0b05b6648a4a95afb53cf351, type: 3}
-  m_Name: Broadsword
+  m_Name: SwordSheath
   m_EditorClassIdentifier: 
-  weapon: {fileID: 6584806603305999822, guid: 196b1eb1d26e0984c837b2d0402a7436, type: 3}
+  weapon: {fileID: 5964705271723874668, guid: 6ae2219c3c4daea439d2032a592d3437, type: 3}
   animatorOverride: {fileID: 22100000, guid: 8d6c10c0a0275e64ca3e5c7dfedeffa8, type: 2}
-  weaponDamage: 10
+  weaponDamage: 8
   weaponRange: 2

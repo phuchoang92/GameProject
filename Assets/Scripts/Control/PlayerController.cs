@@ -24,10 +24,6 @@ namespace Game.Control
             {
                 return;
             }
-            //if (InteractWithPickups())
-            //{
-                //return;
-            //}
             if (InteractWithMovement())
             {
                 return;
@@ -56,27 +52,7 @@ namespace Game.Control
             }
             return false;
         }
-        /*
-        private bool InteractWithPickups()
-        {
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
-            foreach (RaycastHit hit in hits)
-            {
-                WeaponPickup target = hit.transform.GetComponent<WeaponPickup>();
-                if (target == null)
-                {
-                    continue;
-                }
-                
-                if (Input.GetMouseButtonDown(0))
-                {
-                    GetComponent<Fighter>().EquipWeapon(target.GetWeapon());
-                    Destroy(target.gameObject);
-                }
-                return true;
-            }
-            return false;
-        }*/
+
         private bool InteractWithMovement()
         {
             RaycastHit hit;
