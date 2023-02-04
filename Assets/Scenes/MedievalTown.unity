@@ -740,6 +740,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 329415941715490155, guid: ca0e9eb804fd3754d9c151afca179af9, type: 3}
+      propertyPath: uniqueIdentifier
+      value: 4b0c5251-b94e-446f-a100-de55f9afc155
+      objectReference: {fileID: 0}
     - target: {fileID: 1004045254949346210, guid: ca0e9eb804fd3754d9c151afca179af9, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -787,6 +791,10 @@ PrefabInstance:
     - target: {fileID: 1004045254949346238, guid: ca0e9eb804fd3754d9c151afca179af9, type: 3}
       propertyPath: m_Name
       value: Enemy Three
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675033843736901961, guid: ca0e9eb804fd3754d9c151afca179af9, type: 3}
+      propertyPath: uniqueIdentifier
+      value: 207e541b-d430-4eee-adcc-f8d7e5cb2d2d
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0e9eb804fd3754d9c151afca179af9, type: 3}
@@ -7504,6 +7512,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4528411563823780492, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
+      propertyPath: uniqueIdentifier
+      value: 20cd9812-4872-4023-8444-b11c79257c38
+      objectReference: {fileID: 0}
     - target: {fileID: 7288138071574339346, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: health
       value: 50
@@ -7515,6 +7527,10 @@ PrefabInstance:
     - target: {fileID: 8125823989783000958, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: m_Height
       value: 2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398000990521941678, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
+      propertyPath: uniqueIdentifier
+      value: 2ce7771a-4d02-44a2-a49e-f08a13b220b8
       objectReference: {fileID: 0}
     - target: {fileID: 8591113443003523418, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: m_Controller
@@ -30301,7 +30317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1073883832590197764, guid: 80bb38c4ef6d64b4ca647d70bce18ecf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -662.35004
+      value: -662.3501
       objectReference: {fileID: 0}
     - target: {fileID: 1091112617510419604, guid: 80bb38c4ef6d64b4ca647d70bce18ecf, type: 3}
       propertyPath: m_AnchorMax.y
@@ -35187,6 +35203,10 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2806950657383680478, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
+      propertyPath: uniqueIdentifier
+      value: e1617b17-dd45-408a-8c7a-e3732a188ee5
+      objectReference: {fileID: 0}
     - target: {fileID: 7339348005730560809, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
       propertyPath: m_Name
       value: Enemy Two
@@ -35234,6 +35254,10 @@ PrefabInstance:
     - target: {fileID: 7339348005730560821, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7829470549031765500, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
+      propertyPath: uniqueIdentifier
+      value: ec0d45a4-f103-4f50-94b8-c0840d43cfb7
       objectReference: {fileID: 0}
     - target: {fileID: 9009669193245377600, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
       propertyPath: health
@@ -52049,20 +52073,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
---- !u!1 &4199886630958498095 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4807073989659449123, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
-  m_PrefabInstance: {fileID: 4199886630958498094}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4199886630958498096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4199886630958498095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ac009fd047d1d4fa82899175f88d05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
