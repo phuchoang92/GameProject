@@ -135,6 +135,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: fe77c8144f8ddce41b37c2d853061487, type: 2}
+    - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: handTransform
       value: 
       objectReference: {fileID: 2987191710898525473}
@@ -142,6 +146,10 @@ PrefabInstance:
       propertyPath: weaponOverride
       value: 
       objectReference: {fileID: 22100000, guid: 8d6c10c0a0275e64ca3e5c7dfedeffa8, type: 2}
+    - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: defaultWeaponName
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 579941082203244645, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: leftHandTransform
       value: 

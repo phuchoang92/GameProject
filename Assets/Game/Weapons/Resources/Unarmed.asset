@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8aeda86a0b05b6648a4a95afb53cf351, type: 3}
-  m_Name: Broadsword
+  m_Name: Unarmed
   m_EditorClassIdentifier: 
-  weapon: {fileID: 6584806603305999822, guid: 196b1eb1d26e0984c837b2d0402a7436, type: 3}
-  animatorOverride: {fileID: 22100000, guid: 8d6c10c0a0275e64ca3e5c7dfedeffa8, type: 2}
-  weaponDamage: 10
-  weaponRange: 2
+  weapon: {fileID: 0}
+  animatorOverride: {fileID: 0}
+  weaponDamage: 3
+  weaponRange: 1
+  isRightHanded: 1
+  projectile: {fileID: 0}
+  numberOfUsage: -1

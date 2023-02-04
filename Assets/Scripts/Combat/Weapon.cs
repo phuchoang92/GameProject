@@ -12,6 +12,7 @@ namespace Game.Combat
         [SerializeField] float weaponRange = 2f;
         [SerializeField] bool isRightHanded = true;
         [SerializeField] Projectile projectile = null;
+        [SerializeField] int numberOfUsage = -1;
 
         const string WeaponName = "Weapon";
         public void Spawn(Transform rightHandTransform, Transform leftHandTransform, Animator animator)
@@ -82,6 +83,11 @@ namespace Game.Combat
         public float GetRange()
         {
             return weaponRange;
+        }
+
+        public int GetUsage()
+        {
+            return numberOfUsage;
         }
     }
 }
