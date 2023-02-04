@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8aeda86a0b05b6648a4a95afb53cf351, type: 3}
-  m_Name: Unarmed
+  m_Name: Fireball
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
-  animatorOverride: {fileID: 0}
-  weaponDamage: 3
-  weaponRange: 1
+  animatorOverride: {fileID: 22100000, guid: b0f7876c6ebbe364da90beb92154a28d, type: 2}
+  weaponDamage: 12
+  weaponRange: 15
+  isRightHanded: 1
+  projectile: {fileID: 4667082644077253787, guid: fc4a80030632ce949ad9fcfd437cc923, type: 3}
+  numberOfUsage: 1

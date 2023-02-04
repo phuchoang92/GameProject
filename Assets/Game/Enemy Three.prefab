@@ -95,6 +95,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: df5d7c9d703c92a42aab2b62f1967a23, type: 2}
     - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: df5d7c9d703c92a42aab2b62f1967a23, type: 2}
+    - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: defaultWeaponName
+      value: Bow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: leftHandTransform
       value: 
       objectReference: {fileID: 2297642938844065766}
