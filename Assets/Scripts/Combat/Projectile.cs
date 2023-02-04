@@ -1,6 +1,4 @@
-using Game.Core;
-using System.Collections;
-using System.Collections.Generic;
+using Game.Attributes;
 using UnityEngine;
 
 namespace Game.Combat

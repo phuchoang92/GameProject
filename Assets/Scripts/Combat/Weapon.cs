@@ -1,4 +1,4 @@
-using Game.Core;
+using Game.Attributes;
 using UnityEngine;
 
 namespace Game.Combat

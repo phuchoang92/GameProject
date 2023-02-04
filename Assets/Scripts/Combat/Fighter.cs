@@ -1,4 +1,5 @@
 using Game.Core;
+using Game.Attributes;
 using RPG.Saving;
 using System;
 using UnityEngine;
@@ -23,7 +24,6 @@ namespace Game.Combat
             {
                 EquipWeapon(defaultWeapon);
             }
-            
         }
 
         private void Update()

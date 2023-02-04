@@ -1,4 +1,4 @@
-using Game.Core;
+using Game.Attributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
