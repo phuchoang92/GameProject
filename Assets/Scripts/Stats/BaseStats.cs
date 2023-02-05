@@ -11,13 +11,14 @@ namespace Game.Stats
         [SerializeField] CharacterClass characterClass;
         [SerializeField] Progression progression = null;
 
-        public float GetHealth()
+        public float GetStat(Stats stats)
         {
-            if (progression != null)
-            {
-                return progression.GetHealth(characterClass, startingLevel);
-            }
-            return -1;
+            return progression.GetStat(stats, characterClass, startingLevel); 
+        }
+
+        public bool ProgressionCheck()
+        { 
+            return progression != null; 
         }
     }
 }

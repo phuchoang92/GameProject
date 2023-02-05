@@ -53,6 +53,11 @@ namespace Game.Combat
             currentWeapon.Spawn(rightHandTransform,leftHandTransform, animator);
         }
 
+        public Health GetTarget()
+        {
+            return target;
+        }
+
         private void AttackBehaviour()
         {
             transform.LookAt(target.transform);
@@ -76,12 +81,11 @@ namespace Game.Combat
 
             if (currentWeapon.HasProjectile())
             {
-                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
+                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, gameObject);
             }
-            //if (isInRange())
             else
             {
-                target.TakeDamage(currentWeapon.GetDamage());
+                target.TakeDamage(gameObject, currentWeapon.GetDamage());
             }
             if (currentWeapon.GetUsage() != -1)
             {
@@ -91,10 +95,6 @@ namespace Game.Combat
                     EquipWeapon(defaultWeapon);
                 }
             }
-            //else
-            //{
-            //    Cancel();
-            //}
             isAttacking= false;
         }
 
