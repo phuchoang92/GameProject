@@ -170,6 +170,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3731559480767371703, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: characterClass
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9139406505481747390, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: m_Height
       value: 2.21
@@ -213,6 +217,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0aea517f564da442adae70e4cedcde2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1220361864306919138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7375511027429792165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18003110b0ce81b419921aa1838c013a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EXP: 0
 --- !u!4 &7375511027429792185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 579941082203244641, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
