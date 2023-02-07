@@ -1,7 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Game.Combat;
 using Game.Movement;
-using Game.Attributes;
+using Game.Core;
 
 namespace Game.Control
 {
@@ -11,7 +13,7 @@ namespace Game.Control
         // Start is called before the first frame update
         public void Start()
         {
-            health = GetComponent<Health>();
+            health= GetComponent<Health>();
         }
 
         // Update is called once per frame

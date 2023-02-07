@@ -113,6 +113,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+--- !u!1 &7339348005730560809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5715793352856130091, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+  m_PrefabInstance: {fileID: 3064710427625519362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1309946465228195160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7339348005730560809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13190d75f2ebc8f48bd1b70b9a70f7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 5
+  suspicionTIme: 2
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
+  waypointDwellTime: 2
 --- !u!4 &7339348005730560821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5715793352856130103, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}

@@ -1,4 +1,6 @@
-using Game.Attributes;
+using Game.Core;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Combat
@@ -13,7 +15,6 @@ namespace Game.Combat
         [SerializeField] float lifeAfterImpact = 2;
 
         Health target = null;
-        GameObject instigator = null;
         float damage = 0;
 
         private void Start()
@@ -29,11 +30,11 @@ namespace Game.Combat
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
-        public void SetTarget(Health target, GameObject instigator, float damage)
+        public void SetTarget(Health target, float damage)
         {
             this.target = target;
             this.damage = damage;
-            this.instigator = instigator;
+
             Destroy(gameObject, maxLifeTime);
         }
         private Vector3 GetAimLocation()
@@ -50,7 +51,7 @@ namespace Game.Combat
         {
             if (other.GetComponent<Health>() != target) return;
             if (target.isDead()) return;
-            target.TakeDamage(instigator, damage);
+            target.TakeDamage(damage);
             speed = 0;
             if (hitEffect != null)
             {

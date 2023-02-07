@@ -1,5 +1,4 @@
 using Game.Core;
-using Game.Attributes;
 using RPG.Saving;
 using System;
 using UnityEngine;
@@ -24,6 +23,7 @@ namespace Game.Combat
             {
                 EquipWeapon(defaultWeapon);
             }
+            
         }
 
         private void Update()
@@ -53,11 +53,6 @@ namespace Game.Combat
             currentWeapon.Spawn(rightHandTransform,leftHandTransform, animator);
         }
 
-        public Health GetTarget()
-        {
-            return target;
-        }
-
         private void AttackBehaviour()
         {
             transform.LookAt(target.transform);
@@ -81,11 +76,12 @@ namespace Game.Combat
 
             if (currentWeapon.HasProjectile())
             {
-                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, gameObject);
+                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
             }
+            //if (isInRange())
             else
             {
-                target.TakeDamage(gameObject, currentWeapon.GetDamage());
+                target.TakeDamage(currentWeapon.GetDamage());
             }
             if (currentWeapon.GetUsage() != -1)
             {
@@ -95,6 +91,10 @@ namespace Game.Combat
                     EquipWeapon(defaultWeapon);
                 }
             }
+            //else
+            //{
+            //    Cancel();
+            //}
             isAttacking= false;
         }
 
