@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.Attributes
+namespace Game.Stats
 {
     public class ExperienceDisplay : MonoBehaviour
     {

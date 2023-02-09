@@ -35,7 +35,11 @@ namespace Game.Combat
 
             if (!isInRange())
             {
-                if(isAttacking) { return; }
+                print(isAttacking);
+                if(isAttacking) 
+                {
+                    return; 
+                }
                 GetComponent<Movement.Mover>().MoveTo(target.transform.position);
             }
             else
@@ -70,7 +74,7 @@ namespace Game.Combat
 
         private void TriggerAttack()
         {
-            isAttacking = true;
+            SetAttacking(true);
             GetComponent<Animator>().ResetTrigger("stopAttack");
             GetComponent<Animator>().SetTrigger("attack");
         }
@@ -95,7 +99,6 @@ namespace Game.Combat
                     EquipWeapon(defaultWeapon);
                 }
             }
-            isAttacking= false;
         }
 
         private void Shoot()
@@ -122,7 +125,12 @@ namespace Game.Combat
             GetComponent<Animator>().ResetTrigger("attack");
             GetComponent<Animator>().SetTrigger("stopAttack");
             target = null;
-            isAttacking = false;
+            SetAttacking(false);
+        }
+
+        public void SetAttacking(bool isAttacking)
+        {
+            this.isAttacking = isAttacking;
         }
 
         public object CaptureState()
