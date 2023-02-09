@@ -12,13 +12,14 @@ namespace Game.Attributes
         [SerializeField] float health = 100f;
         [SerializeField] float expReward = 10f;
         private bool isDying = false;
+        private float maxHealth;
         private void Start()
         {
             if (GetComponent<BaseStats>().ProgressionCheck())
             {
                 health = GetComponent<BaseStats>().GetStat(Stats.Stats.Health);
-                expReward = GetComponent<BaseStats>().GetStat(Stats.Stats.ExperienceReward);
             }
+            maxHealth = health;
         }
         public bool isDead()
         {
@@ -35,7 +36,7 @@ namespace Game.Attributes
         }
 
         public float GetPercentage() { 
-            return health/ GetComponent<BaseStats>().GetStat(Stats.Stats.Health) * 100; 
+            return health/ maxHealth * 100; 
         }
 
         private void Die()
@@ -50,6 +51,10 @@ namespace Game.Attributes
             Experience experience = instigator.GetComponent<Experience>();
             if (experience != null)
             {
+                if (GetComponent<BaseStats>().ProgressionCheck())
+                {
+                    expReward = GetComponent<BaseStats>().GetStat(Stats.Stats.ExperienceReward);
+                }
                 experience.GainExperience(expReward);
             }
         }
