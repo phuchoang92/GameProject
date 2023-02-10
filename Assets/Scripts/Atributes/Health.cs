@@ -18,10 +18,14 @@ namespace Game.Attributes
         private void Start()
         {
             if (isDying) 
-            { 
-                gameObject.SetActive(false);
+            {
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(false);
+                }
                 return;
             }
+            GetComponent<BaseStats>().OnLevelUp += RegenerateHealth;
             if (!isRestored)
             {
                 if (GetComponent<BaseStats>().ProgressionCheck())
@@ -39,6 +43,7 @@ namespace Game.Attributes
             }
 
         }
+
         public bool isDead()
         {
             return isDying;
@@ -53,7 +58,17 @@ namespace Game.Attributes
             }
         }
 
-        public float GetPercentage() { 
+        public float GetHealthPoints()
+        {
+            return health;
+        }
+
+        public float GetMaxHealhPoints()
+        {
+            return maxHealth;
+        }
+        public float GetPercentage() 
+        { 
             return health/ maxHealth * 100; 
         }
 
@@ -76,7 +91,11 @@ namespace Game.Attributes
                 experience.GainExperience(expReward);
             }
         }
-
+        private void RegenerateHealth()
+        {
+            health = GetComponent<BaseStats>().GetStat(Stats.Stats.Health);
+            maxHealth = health;
+        }
         public object CaptureState()
         {
             return health;
@@ -87,8 +106,7 @@ namespace Game.Attributes
             isRestored = true;
             maxHealth = health;
             health = (float)state;
-
-            if(health <= 0)
+            if (health <= 0)
             {
                 isDying = true;
             }

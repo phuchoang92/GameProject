@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,18 +8,20 @@ namespace Game.Stats
     public class BaseStats : MonoBehaviour
     {
         [Range(1,99)]
-        [SerializeField] int startingLevel = 1;
+        [SerializeField] int currentLevel = 1;
         [SerializeField] CharacterClass characterClass;
         [SerializeField] Progression progression = null;
+        [SerializeField] GameObject levelUpParticleEffect = null;
 
-        int currentLevel = 0;
+        public event Action OnLevelUp;
+
+        //int currentLevel = 1;
 
         private void Start()
         {
             Experience experience = GetComponent<Experience>();
             if (experience != null)
             {
-
                 currentLevel = CalculateLevel();
                 experience.onExperienceGained += UpdateLevel;
             }
@@ -29,13 +32,20 @@ namespace Game.Stats
             int newLevel = CalculateLevel();
             if(newLevel > currentLevel)
             {
-                print("Levelled up");
                 currentLevel = newLevel;
+                LevelUpEffect();
+                OnLevelUp();
             }
         }
+
+        private void LevelUpEffect()
+        {
+            Instantiate(levelUpParticleEffect, transform);
+        }
+
         public float GetStat(Stats stats)
         {
-            return progression.GetStat(stats, characterClass, startingLevel); 
+            return progression.GetStat(stats, characterClass, currentLevel); 
         }
 
         public int GetLevel()

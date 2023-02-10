@@ -19,7 +19,7 @@ namespace Game.Stats
 
             if (levels.Length < level)
             {
-                return 0;
+                return lookupTable[characterClass][stats][levels.Length-1];
             }
 
             return lookupTable[characterClass][stats][level-1];
