@@ -10,6 +10,8 @@ namespace Game.Stats
     {
         [SerializeField] float EXP = 0;
 
+        public event Action onExperienceGained;
+
         public object CaptureState()
         {
             return EXP;
@@ -18,6 +20,7 @@ namespace Game.Stats
         public void GainExperience(float experience)
         {
             EXP += experience;
+            onExperienceGained();
         }
 
         public void RestoreState(object state)
