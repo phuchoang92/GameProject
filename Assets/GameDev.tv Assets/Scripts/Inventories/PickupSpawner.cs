@@ -11,7 +11,6 @@ namespace GameDevTV.Inventories
     {
         // CONFIG DATA
         [SerializeField] InventoryItem item = null;
-        [SerializeField] int number = 1;
 
         // LIFECYCLE METHODS
         private void Awake()
@@ -43,7 +42,7 @@ namespace GameDevTV.Inventories
 
         private void SpawnPickup()
         {
-            var spawnedPickup = item.SpawnPickup(transform.position, number);
+            var spawnedPickup = item.SpawnPickup(transform.position);
             spawnedPickup.transform.SetParent(transform);
         }
 
