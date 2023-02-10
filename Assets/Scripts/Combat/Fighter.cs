@@ -23,6 +23,7 @@ namespace Game.Combat
             if(currentWeapon == null)
             {
                 EquipWeapon(defaultWeapon);
+                currentWeapon = defaultWeapon;
             }
         }
 
@@ -35,7 +36,6 @@ namespace Game.Combat
 
             if (!isInRange())
             {
-                print(isAttacking);
                 if(isAttacking) 
                 {
                     return; 
@@ -135,6 +135,7 @@ namespace Game.Combat
 
         public object CaptureState()
         {
+            if (currentWeapon == null) return defaultWeapon.name;
             return currentWeapon.name;
         }
 

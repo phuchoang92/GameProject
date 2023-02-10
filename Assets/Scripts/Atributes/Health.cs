@@ -4,22 +4,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using RPG.Saving;
 
 namespace Game.Attributes
 {
-    public class Health : MonoBehaviour
+    public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField] float health = 100f;
         [SerializeField] float expReward = 10f;
         private bool isDying = false;
+        private bool isRestored = false;
         private float maxHealth;
         private void Start()
         {
-            if (GetComponent<BaseStats>().ProgressionCheck())
-            {
-                health = GetComponent<BaseStats>().GetStat(Stats.Stats.Health);
+            if (isDying) 
+            { 
+                gameObject.SetActive(false);
+                return;
             }
-            maxHealth = health;
+            if (!isRestored)
+            {
+                if (GetComponent<BaseStats>().ProgressionCheck())
+                {
+                    health = GetComponent<BaseStats>().GetStat(Stats.Stats.Health);
+                }
+                maxHealth = health;
+            }
+            else
+            {
+                if (GetComponent<BaseStats>().ProgressionCheck())
+                {
+                    maxHealth = GetComponent<BaseStats>().GetStat(Stats.Stats.Health);
+                }
+            }
+
         }
         public bool isDead()
         {
@@ -56,6 +74,23 @@ namespace Game.Attributes
                     expReward = GetComponent<BaseStats>().GetStat(Stats.Stats.ExperienceReward);
                 }
                 experience.GainExperience(expReward);
+            }
+        }
+
+        public object CaptureState()
+        {
+            return health;
+        }
+
+        public void RestoreState(object state)
+        {
+            isRestored = true;
+            maxHealth = health;
+            health = (float)state;
+
+            if(health <= 0)
+            {
+                isDying = true;
             }
         }
     }
