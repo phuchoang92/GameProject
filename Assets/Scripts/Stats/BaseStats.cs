@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Game.Stats
@@ -14,15 +16,31 @@ namespace Game.Stats
         [SerializeField] GameObject levelUpParticleEffect = null;
 
         public event Action OnLevelUp;
-
+        Experience experience = null;
+        private void Awake()
+        {
+            experience = GetComponent<Experience>();
+        }
         private void Start()
         {
-            Experience experience = GetComponent<Experience>();
+            if(GetComponent<Experience>()!= null)
+            {
+                currentLevel = CalculateLevel();
+            }
+        }
+        private void OnEnable()
+        {
             if (experience != null)
             {
-
-                currentLevel = CalculateLevel();
                 experience.onExperienceGained += UpdateLevel;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (experience != null) 
+            {
+                experience.onExperienceGained -= UpdateLevel;
             }
         }
 
@@ -43,7 +61,38 @@ namespace Game.Stats
 
         public float GetStat(Stats stats)
         {
+            return GetBaseStat(stats)*(1+GetPercentageModifier(stats)/100) + GetAdditiveModifier(stats);
+        }
+
+        private float GetPercentageModifier(Stats stats)
+        {
+            float total = 0;
+            foreach (IModifier modifier in GetComponents<IModifier>())
+            {
+                foreach (float mod in modifier.GetPercentageModifiers(stats))
+                {
+                    total += mod;
+                }
+            }
+            return total;
+        }
+
+        private float GetBaseStat(Stats stats)
+        {
             return progression.GetStat(stats, characterClass, currentLevel);
+        }
+
+        private float GetAdditiveModifier(Stats stats)
+        {
+            float total = 0;
+            foreach(IModifier modifier in GetComponents<IModifier>())
+            {
+                foreach( float mod in modifier.GetAdditiveModifiers(stats))
+                {
+                    total += mod;
+                }
+            }
+            return total;
         }
 
         public int GetLevel()

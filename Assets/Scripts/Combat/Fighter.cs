@@ -4,10 +4,11 @@ using RPG.Saving;
 using System;
 using UnityEngine;
 using Game.Stats;
+using System.Collections.Generic;
 
 namespace Game.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable
+    public class Fighter : MonoBehaviour, IAction, ISaveable, IModifier
     {
         [SerializeField] float timeBetweenAtk = 1f;
         [SerializeField] Transform rightHandTransform = null;
@@ -84,11 +85,16 @@ namespace Game.Combat
         {
             if (target == null) return;
 
-            float damage = currentWeapon.GetDamage();
+            float damage;
             if (GetComponent<BaseStats>().ProgressionCheck())
             {
-                damage += GetComponent<BaseStats>().GetStat(Stats.Stats.Damage);
+                damage = GetComponent<BaseStats>().GetStat(Stats.Stats.Damage);
             }
+            else
+            {
+                damage = currentWeapon.GetDamage()+10;
+            }
+           
             if (currentWeapon.HasProjectile())
             {
                 currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, gameObject, damage);
@@ -151,6 +157,22 @@ namespace Game.Combat
             String weaponName = (String)state;
             Weapon weapon = Resources.Load<Weapon>(weaponName);
             EquipWeapon(weapon);
+        }
+
+        public IEnumerable<float> GetAdditiveModifiers(Stats.Stats stats)
+        {
+            if(stats == Stats.Stats.Damage)
+            {
+                yield return currentWeapon.GetDamage();
+            }
+        }
+
+        public IEnumerable<float> GetPercentageModifiers(Stats.Stats stats)
+        {
+            if (stats == Stats.Stats.Damage)
+            {
+                yield return currentWeapon.GetPercentageBuff();
+            }
         }
     }
 }
