@@ -3,10 +3,12 @@ using Game.Attributes;
 using RPG.Saving;
 using System;
 using UnityEngine;
+using Game.Stats;
+using System.Collections.Generic;
 
 namespace Game.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable
+    public class Fighter : MonoBehaviour, IAction, ISaveable, IModifier
     {
         [SerializeField] float timeBetweenAtk = 1f;
         [SerializeField] Transform rightHandTransform = null;
@@ -23,6 +25,7 @@ namespace Game.Combat
             if(currentWeapon == null)
             {
                 EquipWeapon(defaultWeapon);
+                currentWeapon = defaultWeapon;
             }
         }
 
@@ -35,7 +38,6 @@ namespace Game.Combat
 
             if (!isInRange())
             {
-                print(isAttacking);
                 if(isAttacking) 
                 {
                     return; 
@@ -83,14 +85,25 @@ namespace Game.Combat
         {
             if (target == null) return;
 
-            if (currentWeapon.HasProjectile())
+            float damage;
+            if (GetComponent<BaseStats>().ProgressionCheck())
             {
-                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, gameObject);
+                damage = GetComponent<BaseStats>().GetStat(Stats.Stats.Damage);
             }
             else
             {
-                target.TakeDamage(gameObject, currentWeapon.GetDamage());
+                damage = currentWeapon.GetDamage()+10;
             }
+           
+            if (currentWeapon.HasProjectile())
+            {
+                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, gameObject, damage);
+            }
+            else
+            {
+                target.TakeDamage(gameObject, damage);
+            }
+
             if (currentWeapon.GetUsage() != -1)
             {
                 numberOfHit = numberOfHit + 1;
@@ -135,6 +148,7 @@ namespace Game.Combat
 
         public object CaptureState()
         {
+            if (currentWeapon == null) return defaultWeapon.name;
             return currentWeapon.name;
         }
 
@@ -143,6 +157,22 @@ namespace Game.Combat
             String weaponName = (String)state;
             Weapon weapon = Resources.Load<Weapon>(weaponName);
             EquipWeapon(weapon);
+        }
+
+        public IEnumerable<float> GetAdditiveModifiers(Stats.Stats stats)
+        {
+            if(stats == Stats.Stats.Damage)
+            {
+                yield return currentWeapon.GetDamage();
+            }
+        }
+
+        public IEnumerable<float> GetPercentageModifiers(Stats.Stats stats)
+        {
+            if (stats == Stats.Stats.Damage)
+            {
+                yield return currentWeapon.GetPercentageBuff();
+            }
         }
     }
 }

@@ -7,25 +7,42 @@ namespace RPG.SceneManagement
 {
     public class SavingWrapper : MonoBehaviour
     {
+        [SerializeField] KeyCode saveKey = KeyCode.S;
+        [SerializeField] KeyCode loadKey = KeyCode.L;
+        [SerializeField] KeyCode deleteKey = KeyCode.Delete;
+
         const string defaultSaveFile = "save";
         [SerializeField] float fadeInTime = 0.2f;
 
-        IEnumerator Start()
+        private void Awake() 
         {
+            StartCoroutine(GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile));
+        }
+
+        // private IEnumerator LoadLastScene() {
+        //     yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
+        // }
+
+        private IEnumerator LoadLastScene()
+        {
+            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
             Fader fader = FindObjectOfType<Fader>();
             fader.FadeOutImmediate();
-            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
             yield return fader.FadeIn(fadeInTime);
         }
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.L))
+            if (Input.GetKeyDown(saveKey))
+            {
+                Save();
+            }
+            if (Input.GetKeyDown(loadKey))
             {
                 Load();
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(deleteKey))
             {
-                Save();
+                Delete();
             }
         }
 
@@ -37,6 +54,12 @@ namespace RPG.SceneManagement
         public void Load()
         {
             GetComponent<SavingSystem>().Load(defaultSaveFile);
+            // StartCoroutine(GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile));
+        }
+
+        public void Delete()
+        {
+            GetComponent<SavingSystem>().Delete(defaultSaveFile);
         }
     }
 }

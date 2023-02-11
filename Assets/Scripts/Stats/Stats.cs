@@ -8,7 +8,8 @@ namespace Game.Stats
     {
         Health,
         ExperienceReward,
-        ExperienceToLevelUp
+        ExperienceToLevelUp,
+        Damage
         
     }
 }
