@@ -19,22 +19,9 @@ namespace GameDevTV.Inventories
         /// Create a pickup at the current position.
         /// </summary>
         /// <param name="item">The item type for the pickup.</param>
-        /// <param name="number">
-        /// The number of items contained in the pickup. Only used if the item
-        /// is stackable.
-        /// </param>
-        public void DropItem(InventoryItem item, int number)
-        {
-            SpawnPickup(item, GetDropLocation(), number);
-        }
-
-        /// <summary>
-        /// Create a pickup at the current position.
-        /// </summary>
-        /// <param name="item">The item type for the pickup.</param>
         public void DropItem(InventoryItem item)
         {
-            SpawnPickup(item, GetDropLocation(), 1);
+            SpawnPickup(item, GetDropLocation());
         }
 
         // PROTECTED
@@ -50,9 +37,9 @@ namespace GameDevTV.Inventories
 
         // PRIVATE
 
-        public void SpawnPickup(InventoryItem item, Vector3 spawnLocation, int number)
+        public void SpawnPickup(InventoryItem item, Vector3 spawnLocation)
         {
-            var pickup = item.SpawnPickup(spawnLocation, number);
+            var pickup = item.SpawnPickup(spawnLocation);
             droppedItems.Add(pickup);
         }
 
@@ -61,7 +48,6 @@ namespace GameDevTV.Inventories
         {
             public string itemID;
             public SerializableVector3 position;
-            public int number;
         }
 
         object ISaveable.CaptureState()
@@ -72,7 +58,6 @@ namespace GameDevTV.Inventories
             {
                 droppedItemsList[i].itemID = droppedItems[i].GetItem().GetItemID();
                 droppedItemsList[i].position = new SerializableVector3(droppedItems[i].transform.position);
-                droppedItemsList[i].number = droppedItems[i].GetNumber();
             }
             return droppedItemsList;
         }
@@ -84,8 +69,7 @@ namespace GameDevTV.Inventories
             {
                 var pickupItem = InventoryItem.GetFromID(item.itemID);
                 Vector3 position = item.position.ToVector();
-                int number = item.number;
-                SpawnPickup(pickupItem, position, number);
+                SpawnPickup(pickupItem, position);
             }
         }
 
