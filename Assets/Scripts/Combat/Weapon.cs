@@ -9,6 +9,7 @@ namespace Game.Combat
         [SerializeField] GameObject weapon = null;
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] float weaponDamage = 10f;
+        [SerializeField] float weaponPercentageBuff = 0f;
         [SerializeField] float weaponRange = 2f;
         [SerializeField] bool isRightHanded = true;
         [SerializeField] Projectile projectile = null;
@@ -78,6 +79,10 @@ namespace Game.Combat
         public float GetDamage()
         {
             return weaponDamage;
+        }
+        public float GetPercentageBuff()
+        {
+            return weaponPercentageBuff;
         }
 
         public float GetRange()

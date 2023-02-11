@@ -34,10 +34,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579941082203244669}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 51.11, y: 2, z: -70.186}
+  m_LocalPosition: {x: 51.11, y: 2.07, z: -70.186}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5265992716547528935}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -166,6 +167,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3300889062129140578}
+        m_TargetAssemblyTypeName: Game.Ui.DamageTextSpawner, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 14
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  expReward: 10
 --- !u!114 &2302040003267658296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +238,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20474797a18138498d6bf0608d65211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingLevel: 1
+  currentLevel: 1
   characterClass: 1
   progression: {fileID: 11400000, guid: 2b47d3352c34fdc4c9bccd9de92e0dc9, type: 2}
+  levelUpParticleEffect: {fileID: 0}
+--- !u!1001 &6129699244361287239
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 579941082203244641}
+    m_Modifications:
+    - target: {fileID: 1337057838138153491, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_Name
+      value: Damage Text Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+--- !u!114 &3300889062129140578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8709413987504915749, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+  m_PrefabInstance: {fileID: 6129699244361287239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdd4c98ebc3fa64197bb973139ce98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &5265992716547528935 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2019161320217026208, guid: 671eb7b9302168940aa724346f72705c, type: 3}
+  m_PrefabInstance: {fileID: 6129699244361287239}
+  m_PrefabAsset: {fileID: 0}

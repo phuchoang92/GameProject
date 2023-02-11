@@ -30,7 +30,7 @@ namespace Game.Control
 
         Health health;
         // Start is called before the first frame update
-        public void Start()
+        public void Awake()
         {
             health = GetComponent<Health>();
         }

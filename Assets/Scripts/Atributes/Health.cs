@@ -5,13 +5,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using RPG.Saving;
+using UnityEngine.Events;
 
 namespace Game.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField] float health = 100f;
+        [SerializeField] TakeDamageEvent takeDamage;
         [SerializeField] float expReward = 10f;
+
+        [System.Serializable]
+        public class TakeDamageEvent : UnityEvent<float>
+        {
+
+        }
+
         private bool isDying = false;
         private bool isRestored = false;
         private float maxHealth;
@@ -25,8 +34,6 @@ namespace Game.Attributes
                 }
                 return;
             }
-
-            GetComponent<BaseStats>().OnLevelUp += RegenerateHealth;
 
             if (!isRestored)
             {
@@ -45,6 +52,15 @@ namespace Game.Attributes
             }
 
         }
+
+        private void OnEnable()
+        {
+            GetComponent<BaseStats>().OnLevelUp += RegenerateHealth;
+        }
+        private void OnDisable()
+        {
+            GetComponent<BaseStats>().OnLevelUp -= RegenerateHealth;
+        }
         public bool isDead()
         {
             return isDying;
@@ -56,6 +72,10 @@ namespace Game.Attributes
             {
                 Die();
                 AwardExperience(instigator);
+            }
+            else
+            {
+                takeDamage.Invoke(damage);
             }
         }
 
