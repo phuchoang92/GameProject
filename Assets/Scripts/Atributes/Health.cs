@@ -90,7 +90,7 @@ namespace Game.Attributes
         }
 
         public float GetPercentage() { 
-            return health/ maxHealth * 100; 
+            return health/ maxHealth; 
         }
 
         private void Die()
