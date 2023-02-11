@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 using RPG.SceneManagement;
+using Game.Control;
 
 namespace RPG.SceneManagement
 {
@@ -41,26 +42,30 @@ namespace RPG.SceneManagement
             DontDestroyOnLoad(gameObject);
 
             Fader fader = FindObjectOfType<Fader>();
-
+            SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
+            PlayerController playerController =  GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            playerController.enabled = false;
             yield return fader.FadeOut(FadeOutTime);
 
             // save current level
-            SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
-            wrapper.Save();
+            savingWrapper.Save();
 
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
+            PlayerController newPlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            newPlayerController.enabled = false;
 
             // Load 
-            wrapper.Load();
+            savingWrapper.Load();
 
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
 
-            wrapper.Save();
+            savingWrapper.Save();
 
             yield return new WaitForSeconds(FadeWaitTime);
-            yield return fader.FadeIn(FadeInTime);
+            fader.FadeIn(FadeInTime);
 
+            newPlayerController.enabled = true;
             Destroy(gameObject);
         }
 

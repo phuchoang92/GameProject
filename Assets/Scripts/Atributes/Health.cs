@@ -14,6 +14,7 @@ namespace Game.Attributes
         [SerializeField] float health = 100f;
         [SerializeField] TakeDamageEvent takeDamage;
         [SerializeField] float expReward = 10f;
+        [SerializeField] UnityEvent onDie;
 
         [System.Serializable]
         public class TakeDamageEvent : UnityEvent<float>
@@ -70,6 +71,7 @@ namespace Game.Attributes
             health = Mathf.Max(health - damage, 0);
             if (health == 0)
             {
+                onDie.Invoke();
                 Die();
                 AwardExperience(instigator);
             }
