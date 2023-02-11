@@ -3,6 +3,7 @@ using Game.Attributes;
 using RPG.Saving;
 using System;
 using UnityEngine;
+using Game.Stats;
 
 namespace Game.Combat
 {
@@ -83,14 +84,20 @@ namespace Game.Combat
         {
             if (target == null) return;
 
+            float damage = currentWeapon.GetDamage();
+            if (GetComponent<BaseStats>().ProgressionCheck())
+            {
+                damage += GetComponent<BaseStats>().GetStat(Stats.Stats.Damage);
+            }
             if (currentWeapon.HasProjectile())
             {
-                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, gameObject);
+                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, gameObject, damage);
             }
             else
             {
-                target.TakeDamage(gameObject, currentWeapon.GetDamage());
+                target.TakeDamage(gameObject, damage);
             }
+
             if (currentWeapon.GetUsage() != -1)
             {
                 numberOfHit = numberOfHit + 1;
