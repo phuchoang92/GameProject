@@ -131,9 +131,9 @@ namespace Game.Attributes
             maxHealth = health;
             health = (float)state;
 
-            if(health <= 0)
+            if (health <= 0)
             {
-                isDying = true;
+                Die();
             }
         }
     }
