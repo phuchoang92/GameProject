@@ -5,6 +5,7 @@ using Game.Attributes;
 using UnityEngine.EventSystems;
 using UnityEngine.AI;
 using System;
+using GameDevTV.Inventories;
 
 namespace Game.Control
 {
@@ -37,6 +38,7 @@ namespace Game.Control
         // Update is called once per frame
         public void Update()
         {   
+            CheckSpecialAbilityKeys();
             // if (Input.GetMouseButtonUp(0))
             // {
             //     movementStarted = false;
@@ -53,6 +55,37 @@ namespace Game.Control
 
             SetCursor(CursorType.None);
         }
+
+        // use item in action slots..................
+        private void CheckSpecialAbilityKeys()
+        {
+            var actionStore = GetComponent<ActionStore>();
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                actionStore.Use(0, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                actionStore.Use(1, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                actionStore.Use(2, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                actionStore.Use(3, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                actionStore.Use(4, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                actionStore.Use(5, gameObject);
+            }
+        }
+
 
         private bool InteractWithUI()
         {
