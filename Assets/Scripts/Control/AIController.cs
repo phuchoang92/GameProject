@@ -42,7 +42,7 @@ namespace Game.Control
         // Update is called once per frame
         void Update()
         {
-            if (health.isDead()) return;
+            if (health.IsDead()) return;
             if (IsAggrevated() && fighter.CanAttack(player))
             {
                 AttackBehaviour();

@@ -2302,7 +2302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d7151cf53ad6640aa6998c2363a1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAtk: 1
+  timeBetweenAtk: 1.5
   rightHandTransform: {fileID: 697550354037292813}
   leftHandTransform: {fileID: 2725918034933343167}
   defaultWeapon: {fileID: 11400000, guid: fe77c8144f8ddce41b37c2d853061487, type: 2}
@@ -2331,6 +2331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  healthRegenPercentage: 5
   takeDamage:
     m_PersistentCalls:
       m_Calls:
