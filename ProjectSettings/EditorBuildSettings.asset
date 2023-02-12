@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MedievalTown.unity
     guid: 826b1824dc3b5364da135b1323049161
+  - enabled: 1
+    path: Assets/Scenes/SceneBoss.unity
+    guid: 3cc1942ac1680ca49889212ef50a9824
   m_configObjects: {}
