@@ -7,10 +7,11 @@ using Game.Stats;
 using System.Collections.Generic;
 using Game.Movement;
 using Unity.VisualScripting;
+using GameDevTV.Inventories;
 
 namespace Game.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable, IModifier
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float timeBetweenAtk = 1f;
         [SerializeField] Transform rightHandTransform = null;
@@ -19,10 +20,34 @@ namespace Game.Combat
         [SerializeField] GameObject defaultWeaponInModel = null;
 
         Health target;
+        Equipment equipment;
         float timeSinceLastAttack = Mathf.Infinity;
         bool isAttacking = false;
         WeaponConfig currentWeapon= null;
         int numberOfHit = 0;
+
+        private void Awake()
+        {
+            equipment = GetComponent<Equipment>();
+            if (equipment)
+            {
+                equipment.equipmentUpdated += UpdateWeapon;
+            }
+        }
+
+        private void UpdateWeapon()
+        {
+            var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
+            if (weapon == null) 
+            {
+                EquipWeapon(defaultWeapon);
+            }
+            else
+            {
+                EquipWeapon(weapon);
+            }
+        }
+
         private void Start()
         {
             if(currentWeapon == null)
@@ -179,22 +204,6 @@ namespace Game.Combat
             target = null;
             isAttacking = false;
             numberOfHit = 0;
-        }
-
-        public IEnumerable<float> GetAdditiveModifiers(Stats.Stats stats)
-        {
-            if(stats == Stats.Stats.Damage)
-            {
-                yield return currentWeapon.GetDamage();
-            }
-        }
-
-        public IEnumerable<float> GetPercentageModifiers(Stats.Stats stats)
-        {
-            if (stats == Stats.Stats.Damage)
-            {
-                yield return currentWeapon.GetPercentageBuff();
-            }
         }
     }
 }

@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aeda86a0b05b6648a4a95afb53cf351, type: 3}
   m_Name: Boss FIre
   m_EditorClassIdentifier: 
+  itemID: 16b8c0a2-6121-49d0-88ba-3ccd4a56dd72
+  displayName: Boss Fire
+  description: 
+  icon: {fileID: 21300000, guid: 881798b77426a8f47b533dcc4767e9e5, type: 3}
+  pickup: {fileID: 0}
+  stackable: 0
+  allowedEquipLocation: 5
   weapon: {fileID: 0}
   animatorOverride: {fileID: 22100000, guid: ee49ea4c670bf5d48a1bc0ce5c46ed9f, type: 2}
   weaponDamage: 16

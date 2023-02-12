@@ -1,10 +1,13 @@
 using Game.Attributes;
+using Game.Stats;
+using GameDevTV.Inventories;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Combat
 {
     [CreateAssetMenu(fileName = "Weapon",menuName = "Weapons/Make New Weapon", order = 0)]
-    public class WeaponConfig : ScriptableObject
+    public class WeaponConfig : EquipableItem, IModifier
     {
         [SerializeField] GameObject weapon = null;
         [SerializeField] AnimatorOverrideController animatorOverride = null;
@@ -94,6 +97,21 @@ namespace Game.Combat
         public int GetUsage()
         {
             return numberOfUsage;
+        }
+        public IEnumerable<float> GetAdditiveModifiers(Stats.Stats stats)
+        {
+            if (stats == Stats.Stats.Damage)
+            {
+                yield return weaponDamage;
+            }
+        }
+
+        public IEnumerable<float> GetPercentageModifiers(Stats.Stats stats)
+        {
+            if (stats == Stats.Stats.Damage)
+            {
+                yield return weaponPercentageBuff;
+            }
         }
     }
 }
