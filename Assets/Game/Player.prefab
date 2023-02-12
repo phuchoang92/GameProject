@@ -2174,7 +2174,6 @@ GameObject:
   - component: {fileID: 5888512309293231896}
   - component: {fileID: 8558528734656172001}
   - component: {fileID: 2672812730829575326}
-  - component: {fileID: 735314856325175320}
   - component: {fileID: 89418363154492225}
   - component: {fileID: 4781186176766679639}
   - component: {fileID: 4459837230182934433}
@@ -2303,7 +2302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d7151cf53ad6640aa6998c2363a1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAtk: 1.5
+  timeBetweenAtk: 1
   rightHandTransform: {fileID: 697550354037292813}
   leftHandTransform: {fileID: 2725918034933343167}
   defaultWeapon: {fileID: 11400000, guid: fe77c8144f8ddce41b37c2d853061487, type: 2}
@@ -2348,6 +2347,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   expReward: 10
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7751233556059243214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2423,19 +2425,6 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: cecad95c851b97f40b105b30b0bfede3, type: 3}
     hotspot: {x: 0, y: 0}
   raycastRadius: 1
---- !u!65 &735314856325175320
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7519543703795926610}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &89418363154492225
 MonoBehaviour:
   m_ObjectHideFlags: 0

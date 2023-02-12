@@ -32,31 +32,27 @@ namespace Game.Attributes
 
         private void Start()
         {
-            if (isDying) 
+            if (health <= 0)
             {
-                foreach (Transform child in transform)
-                {
-                    child.gameObject.SetActive(false);
-                }
-                return;
-            }
-
-            if (!isRestored)
-            {
-                if (GetComponent<BaseStats>().ProgressionCheck())
-                {
-                    health = GetComponent<BaseStats>().GetStat(Stats.Stats.Health);
-                }
-                maxHealth = health;
+                isDying = true;
+                SetCharacterActive(!isDying);
             }
             else
             {
                 if (GetComponent<BaseStats>().ProgressionCheck())
                 {
-                    maxHealth = GetComponent<BaseStats>().GetStat(Stats.Stats.Health);
+                    maxHealth = GetComponent<BaseStats>().GetStat(Stats.Stats.Health); ;
+                }
+                else
+                {
+                    maxHealth = health;
+                }
+
+                if (!isRestored && GetComponent<BaseStats>().ProgressionCheck())
+                {
+                    health = GetComponent<BaseStats>().GetStat(Stats.Stats.Health);
                 }
             }
-
         }
 
         private void OnEnable()
@@ -66,6 +62,14 @@ namespace Game.Attributes
         private void OnDisable()
         {
             GetComponent<BaseStats>().OnLevelUp -= RegenerateHealth;
+        }
+
+        private void SetCharacterActive(bool active)
+        {
+            foreach( Transform child in transform)
+            {
+                child.gameObject.SetActive(active);
+            }
         }
         public bool isDead()
         {
@@ -135,12 +139,15 @@ namespace Game.Attributes
         public void RestoreState(object state)
         {
             isRestored = true;
-            maxHealth = health;
             health = (float)state;
 
-            if (health <= 0)
+            if (health > 0) 
             {
-                Die();
+                isDying = false;
+                SetCharacterActive(!isDying);
+                Animator anime = GetComponent<Animator>();
+                anime.Rebind();
+                anime.Update(0f);
             }
         }
 

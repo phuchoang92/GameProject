@@ -2,12 +2,13 @@ using Game.Attributes;
 using Game.Combat;
 using Game.Core;
 using Game.Movement;
+using RPG.Saving;
 using System;
 using UnityEngine;
 
 namespace Game.Control
 {
-    public class AIController : MonoBehaviour
+    public class AIController : MonoBehaviour, ISaveable
     {
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTIme = 2f;
@@ -20,8 +21,8 @@ namespace Game.Control
         Health health;
         Mover mover;
         GameObject player;
-
         Vector3 guardPosition;
+
         bool isAggrevated = false;
         float timeSinceLastSawPlayer = Mathf.Infinity;
         float timeSinceArrivedAtWaypoint = Mathf.Infinity;
@@ -34,11 +35,9 @@ namespace Game.Control
             health = GetComponent<Health>();
             mover = GetComponent<Mover>();
             player = GameObject.FindGameObjectWithTag("Player");
-        }
-        void Start()
-        {
             guardPosition = transform.position;
         }
+        
 
         // Update is called once per frame
         void Update()
@@ -148,6 +147,21 @@ namespace Game.Control
         private void OnDrawGizmosSelected()
         {
             Gizmos.DrawWireSphere(transform.position, chaseDistance);
+        }
+
+        public object CaptureState()
+        {
+            return new SerializableVector3(guardPosition);
+        }
+
+        public void RestoreState(object state)
+        {
+            guardPosition = ((SerializableVector3)state).ToVector();
+            isAggrevated = false;
+            timeSinceLastSawPlayer = Mathf.Infinity;
+            timeSinceArrivedAtWaypoint = Mathf.Infinity;
+            timeSinceAggrevated = Mathf.Infinity;
+            currentWaypointIndex = 0;
         }
     }
 }

@@ -160,6 +160,10 @@ namespace Game.Combat
             String weaponName = (String)state;
             WeaponConfig weapon = Resources.Load<WeaponConfig>(weaponName);
             EquipWeapon(weapon);
+
+            target = null;
+            isAttacking = false;
+            numberOfHit = 0;
         }
 
         public IEnumerable<float> GetAdditiveModifiers(Stats.Stats stats)

@@ -66,8 +66,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579941082203244669}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 51.11, y: 2.07, z: -70.186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d7151cf53ad6640aa6998c2363a1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAtk: 1.5
+  timeBetweenAtk: 1
   rightHandTransform: {fileID: 0}
   leftHandTransform: {fileID: 0}
   defaultWeapon: {fileID: 11400000, guid: 57a795c74040c484e871fa98d1cac8f4, type: 2}
