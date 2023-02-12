@@ -43511,6 +43511,10 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1935020631051667703, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: fd7d68a65822e4a44a9ef78850e64cfc, type: 3}
     - target: {fileID: 6782402230663953123, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
       propertyPath: progression
       value: 
@@ -43563,10 +43567,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7339348005730560822, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: a177b0e6ff26a894180468c168e802cc, type: 3}
     - target: {fileID: 9009669193245377600, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
       propertyPath: exp
       value: 30
@@ -64345,6 +64345,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3120474518299613719, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: fe77c8144f8ddce41b37c2d853061487, type: 2}
     - target: {fileID: 3179729775772960333, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
       propertyPath: m_margin.z
       value: 26.89853
@@ -64839,7 +64843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8273748188653239264, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -662.35
+      value: -662.35004
       objectReference: {fileID: 0}
     - target: {fileID: 8273762233243501202, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
       propertyPath: m_AnchorMax.y

@@ -24,6 +24,7 @@ namespace Game.Combat
             {
                 Transform handTransform = GetTransform(rightHandTransform, leftHandTransform);
                 GameObject weaponn = Instantiate(weapon, handTransform);
+
                 weaponn.name = WeaponName;
             }
 
