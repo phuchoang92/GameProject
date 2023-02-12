@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -81,6 +81,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
@@ -92,11 +96,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4136181596771604421}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 4292082740582030214}
+    - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
@@ -108,6 +120,10 @@ PrefabInstance:
       value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Aggrevate
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Game.Control.AIController, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -116,11 +132,19 @@ PrefabInstance:
       value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: Game.Control.AIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8449434619305755934, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
