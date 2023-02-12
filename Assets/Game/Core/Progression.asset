@@ -81,3 +81,20 @@ MonoBehaviour:
       - 0
       - 3
       - 7
+  - characterClass: 3
+    stats:
+    - stat: 0
+      levels:
+      - 50
+      - 100
+      - 180
+    - stat: 1
+      levels:
+      - 30
+      - 70
+      - 120
+    - stat: 3
+      levels:
+      - 3
+      - 7
+      - 10

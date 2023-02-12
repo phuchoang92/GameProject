@@ -147,6 +147,10 @@ PrefabInstance:
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2302040003267658296, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: maxSpeed
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8449434619305755934, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: m_RootOrder
       value: 2
