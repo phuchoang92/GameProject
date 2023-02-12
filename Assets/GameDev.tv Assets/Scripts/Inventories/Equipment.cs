@@ -5,12 +5,7 @@ using RPG.Saving;
 
 namespace GameDevTV.Inventories
 {
-    /// <summary>
-    /// Provides a store for the items equipped to a player. Items are stored by
-    /// their equip locations.
-    /// 
-    /// This component should be placed on the GameObject tagged "Player".
-    /// </summary>
+
     public class Equipment : MonoBehaviour, ISaveable
     {
         // STATE

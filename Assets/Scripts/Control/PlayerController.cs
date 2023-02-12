@@ -23,7 +23,7 @@ namespace Game.Control
         Health health;
 
         [SerializeField] CursorMapping[] cursorMappings = null;
-        [SerializeField] float maxNavMeshProjectionDistance = 1f;
+        [SerializeField] float maxNavMeshProjectionDistance = 10f;
         [SerializeField] float raycastRadius = 1f;
         [SerializeField] float maxNavPathLength = 40f;
 
