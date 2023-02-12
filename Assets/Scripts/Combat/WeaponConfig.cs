@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Game.Combat
 {
     [CreateAssetMenu(fileName = "Weapon",menuName = "Weapons/Make New Weapon", order = 0)]
-    public class Weapon : ScriptableObject
+    public class WeaponConfig : ScriptableObject
     {
         [SerializeField] GameObject weapon = null;
         [SerializeField] AnimatorOverrideController animatorOverride = null;

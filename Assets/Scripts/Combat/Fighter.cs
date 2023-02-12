@@ -13,12 +13,12 @@ namespace Game.Combat
         [SerializeField] float timeBetweenAtk = 1f;
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
-        [SerializeField] Weapon defaultWeapon = null;
+        [SerializeField] WeaponConfig defaultWeapon = null;
 
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
         bool isAttacking = false;
-        Weapon currentWeapon= null;
+        WeaponConfig currentWeapon= null;
         int numberOfHit = 0;
         private void Start()
         {
@@ -51,7 +51,7 @@ namespace Game.Combat
             }
         }
 
-        public void EquipWeapon(Weapon weapon)
+        public void EquipWeapon(WeaponConfig weapon)
         {
             currentWeapon = weapon;
             numberOfHit = 0;
@@ -155,7 +155,7 @@ namespace Game.Combat
         public void RestoreState(object state)
         {
             String weaponName = (String)state;
-            Weapon weapon = Resources.Load<Weapon>(weaponName);
+            WeaponConfig weapon = Resources.Load<WeaponConfig>(weaponName);
             EquipWeapon(weapon);
         }
 

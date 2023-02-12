@@ -6,6 +6,7 @@ using UnityEngine;
 using System;
 using RPG.Saving;
 using UnityEngine.Events;
+using GameDevTV.Utils;
 
 namespace Game.Attributes
 {
@@ -22,9 +23,13 @@ namespace Game.Attributes
 
         }
 
+        LazyValue<float> healthPoints;
+
         private bool isDying = false;
         private bool isRestored = false;
         private float maxHealth;
+
+
         private void Start()
         {
             if (isDying) 
@@ -137,6 +142,12 @@ namespace Game.Attributes
             {
                 Die();
             }
+        }
+
+        public void Heal(float healthToRestore)
+        {
+            health = Mathf.Min(health + healthToRestore, GetMaxHealhPoints());
+
         }
     }
 }

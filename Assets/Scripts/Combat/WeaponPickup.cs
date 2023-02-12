@@ -1,39 +1,38 @@
+using Game.Attributes;
+using Game.Control;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Combat
 {
-    public class WeaponPickup : MonoBehaviour
+    public class WeaponPickup : MonoBehaviour, IRaycastable
     {
-        [SerializeField] Weapon weapon = null;
+        [SerializeField] WeaponConfig weapon = null;
         [SerializeField] float respawnTime = 5;
-
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-        public Weapon GetWeapon()
-        {
-            return weapon;
-        }
+        [SerializeField] float healthToRestore = 0;
 
         private void OnTriggerEnter(Collider other)
         {
             if(other.gameObject.tag == "Player")
             {
-                other.GetComponent<Fighter>().EquipWeapon(weapon);
-                StartCoroutine(HideForSeconds(respawnTime));
+                Pickup(other.gameObject);
             }
         }
+
+        private void Pickup(GameObject subject)
+        {
+            if(weapon != null)
+            {
+                subject.GetComponent<Fighter>().EquipWeapon(weapon);
+            }
+            if (healthToRestore > 0)
+            {
+                subject.GetComponent<Health>().Heal(healthToRestore);
+            }
+            StartCoroutine(HideForSeconds(respawnTime));
+        }
+
 
         private IEnumerator HideForSeconds(float seconds)
         {
@@ -49,5 +48,20 @@ namespace Game.Combat
                 child.gameObject.SetActive(shouldShow);
             }
         }
+
+        public CursorType GetCursorType()
+        {
+            return CursorType.Pickup;
+        }
+
+        public bool HandleRaycast(PlayerController callingController)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Pickup(callingController.gameObject);
+            }
+            return true;
+        }
+    
     }
 }
