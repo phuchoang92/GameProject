@@ -7,12 +7,15 @@ using System;
 using RPG.Saving;
 using UnityEngine.Events;
 using GameDevTV.Utils;
+using Unity.VisualScripting;
+using System.Diagnostics;
 
 namespace Game.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField] float health = 100f;
+        [SerializeField] float healthRegenPercentage = 5f;
         [SerializeField] TakeDamageEvent takeDamage;
         [SerializeField] float expReward = 10f;
         [SerializeField] UnityEvent onDie;
@@ -28,10 +31,22 @@ namespace Game.Attributes
         private bool isDying = false;
         private bool isRestored = false;
         private float maxHealth;
+        private Coroutine coroutine;
+        private void Awake()
+        {
 
-
+            if (gameObject.tag == "Player")
+            {
+                print("Awake");
+                if (coroutine == null) 
+                { 
+                    coroutine = StartCoroutine(SelfRegen());
+                }
+            }
+        }
         private void Start()
         {
+            print("Start");
             if (health <= 0)
             {
                 isDying = true;
@@ -71,7 +86,7 @@ namespace Game.Attributes
                 child.gameObject.SetActive(active);
             }
         }
-        public bool isDead()
+        public bool IsDead()
         {
             return isDying;
         }
@@ -111,7 +126,14 @@ namespace Game.Attributes
             GetComponent<Animator>().SetTrigger("die");
             GetComponent<ActionScheduler>().CancelAction();
         }
-
+        private IEnumerator SelfRegen()
+        {
+            while (true)
+            {
+                health = MathF.Min(health + maxHealth*healthRegenPercentage / 100, maxHealth);
+                yield return new WaitForSeconds(3f);
+            }
+        }
         private void RegenerateHealth()
         {
             health = GetComponent<BaseStats>().GetStat(Stats.Stats.Health);

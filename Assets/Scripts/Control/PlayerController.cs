@@ -35,7 +35,7 @@ namespace Game.Control
         public void Update()
         {   
             CheckSpecialAbilityKeys();
-            if (health.isDead()) return;
+            if (health.IsDead()) return;
             if (InteractWithUI()) return;
             if (InteractWithComponent()) return;
             if (InteractWithCombat()) return;
