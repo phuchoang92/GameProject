@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 3783344644941733557, guid: cebb9fb897bde3e45829227301885728, type: 3}
   animatorOverride: {fileID: 22100000, guid: 054d6394445e8784bb4b5a03971e34b2, type: 2}
-  weaponDamage: 6
+  weaponDamage: 8
   weaponPercentageBuff: 0
-  weaponRange: 8
+  weaponRange: 10
   isRightHanded: 0
   projectile: {fileID: 5941414495009843655, guid: 1d664a4e3b000d544bff50004cd4d6d6, type: 3}
   numberOfUsage: -1

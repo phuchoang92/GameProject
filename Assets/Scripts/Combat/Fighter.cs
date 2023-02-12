@@ -26,7 +26,7 @@ namespace Game.Combat
             if(currentWeapon == null)
             {
                 EquipWeapon(defaultWeapon);
-                currentWeapon = defaultWeapon;
+                // currentWeapon = defaultWeapon;
             }
         }
 
@@ -35,7 +35,7 @@ namespace Game.Combat
             timeSinceLastAttack += Time.deltaTime;
             if (target == null) return;
 
-            if (target.isDead()) return;
+            if (target.IsDead()) return;
 
             if (!isInRange())
             {
@@ -43,11 +43,11 @@ namespace Game.Combat
                 {
                     return; 
                 }
-                GetComponent<Movement.Mover>().MoveTo(target.transform.position, 1f);
+                GetComponent<Mover>().MoveTo(target.transform.position, 1f);
             }
             else
             {
-                GetComponent<Movement.Mover>().Cancel();
+                GetComponent<Mover>().Cancel();
                 AttackBehaviour();
             }
         }
@@ -125,7 +125,7 @@ namespace Game.Combat
             if (combatTarget == null) return false;
             if (!GetComponent<Mover>().CanMoveTo(combatTarget.transform.position)) return false;
             Health target = combatTarget.GetComponent<Health>();
-            return target != null && !target.isDead();
+            return target != null && !target.IsDead();
         }
         private bool isInRange()
         {

@@ -27,7 +27,7 @@ namespace Game.Combat
         {
             if (target == null) return;
 
-            if (isHoming && !target.isDead()) transform.LookAt(GetAimLocation());
+            if (isHoming && !target.IsDead()) transform.LookAt(GetAimLocation());
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
@@ -51,7 +51,7 @@ namespace Game.Combat
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<Health>() != target) return;
-            if (target.isDead()) return;
+            if (target.IsDead()) return;
             target.TakeDamage(instigator, damage);
             speed = 0;
             onHit.Invoke();
