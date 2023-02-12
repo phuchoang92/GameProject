@@ -2363,6 +2363,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  maxSpeed: 6
+  maxNavPathLength: 40
 --- !u!136 &5888512309293231896
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2424,7 +2426,9 @@ MonoBehaviour:
   - type: 5
     texture: {fileID: 2800000, guid: cecad95c851b97f40b105b30b0bfede3, type: 3}
     hotspot: {x: 0, y: 0}
+  maxNavMeshProjectionDistance: 1
   raycastRadius: 1
+  maxNavPathLength: 40
 --- !u!114 &89418363154492225
 MonoBehaviour:
   m_ObjectHideFlags: 0

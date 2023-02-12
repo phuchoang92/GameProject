@@ -16,7 +16,6 @@ namespace Game.Movement
         [SerializeField] float maxNavPathLength = 40f;
         NavMeshAgent navMeshAgent;
         
-
         void Update()
         {
             //navMeshAgent.enabled = !health.isDead();
