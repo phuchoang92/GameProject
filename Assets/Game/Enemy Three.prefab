@@ -74,9 +74,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1029739830608265905, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4292082740582030214, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: chaseDistance
-      value: 13
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5580707118568320991, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: m_Height
@@ -161,6 +165,10 @@ PrefabInstance:
     - target: {fileID: 5715793352856130103, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825911747214066632, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8401437623922934753, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: characterClass
