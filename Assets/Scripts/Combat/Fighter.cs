@@ -5,6 +5,7 @@ using System;
 using UnityEngine;
 using Game.Stats;
 using System.Collections.Generic;
+using Game.Movement;
 
 namespace Game.Combat
 {
@@ -42,7 +43,7 @@ namespace Game.Combat
                 {
                     return; 
                 }
-                GetComponent<Movement.Mover>().MoveTo(target.transform.position);
+                GetComponent<Movement.Mover>().MoveTo(target.transform.position, 1f);
             }
             else
             {
@@ -121,6 +122,8 @@ namespace Game.Combat
 
         public bool CanAttack(GameObject combatTarget)
         {
+            if (combatTarget == null) return false;
+            if (!GetComponent<Mover>().CanMoveTo(combatTarget.transform.position)) return false;
             Health target = combatTarget.GetComponent<Health>();
             return target != null && !target.isDead();
         }

@@ -12,7 +12,6 @@ namespace Game.Control
     public class PlayerController : MonoBehaviour
     {
 
-        // Cursor------------------------------------
         [System.Serializable]
         public struct CursorMapping
         {
@@ -21,28 +20,21 @@ namespace Game.Control
             public Vector2 hotspot;
         }
 
-        [SerializeField] CursorMapping[] cursorMappings = null;
-        // [SerializeField] float maxNavMeshProjectionDistance = 1f;
-        [SerializeField] float raycastRadius = 1f;
-
-        // bool movementStarted = false;
-        //NMD--------------------------------------
-
         Health health;
-        // Start is called before the first frame update
+
+        [SerializeField] CursorMapping[] cursorMappings = null;
+        [SerializeField] float maxNavMeshProjectionDistance = 1f;
+        [SerializeField] float raycastRadius = 1f;
+        [SerializeField] float maxNavPathLength = 40f;
+
         public void Awake()
         {
             health = GetComponent<Health>();
         }
 
-        // Update is called once per frame
         public void Update()
         {   
             CheckSpecialAbilityKeys();
-            // if (Input.GetMouseButtonUp(0))
-            // {
-            //     movementStarted = false;
-            // }
             if (health.isDead()) return;
             if (InteractWithUI()) return;
             if (InteractWithComponent()) return;
@@ -120,46 +112,60 @@ namespace Game.Control
             }
             return false;
         }
-        /*
-        private bool InteractWithPickups()
-        {
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
-            foreach (RaycastHit hit in hits)
-            {
-                WeaponPickup target = hit.transform.GetComponent<WeaponPickup>();
-                if (target == null)
-                {
-                    continue;
-                }
-                
-                if (Input.GetMouseButtonDown(0))
-                {
-                    GetComponent<Fighter>().EquipWeapon(target.GetWeapon());
-                    Destroy(target.gameObject);
-                }
-                return true;
-            }
-            return false;
-        }*/
 
-        //*****************************
         private bool InteractWithMovement()
         {
-            RaycastHit hit;
-            bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
+            Vector3 target;
+            bool hasHit = RaycastNavMesh(out target);
             if (hasHit)
             {
+                if (!GetComponent<Mover>().CanMoveTo(target)) return false;
+
                 if (Input.GetMouseButtonDown(0))
                 {
-                    GetComponent<Mover>().StartMoveAction(hit.point);
+                    GetComponent<Mover>().StartMoveAction(target, 1f);
                 }
                 SetCursor(CursorType.Movement);
                 return true;
             }
             return false;
         }
-        //*******************************************
-        //--------------------------------------------
+
+        private bool RaycastNavMesh(out Vector3 target)
+        {
+            target = new Vector3();
+
+            RaycastHit hit;
+            bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
+            if (!hasHit) return false;
+
+            NavMeshHit navMeshHit;
+            bool hasCastToNavMesh = NavMesh.SamplePosition(
+                hit.point, out navMeshHit, maxNavMeshProjectionDistance, NavMesh.AllAreas);
+            if (!hasCastToNavMesh) return false;
+
+            target = navMeshHit.position;
+            NavMeshPath path = new NavMeshPath();
+            bool hasPath = NavMesh.CalculatePath(transform.position, target, NavMesh.AllAreas, path);
+            if (!hasPath) return false;
+            if (path.status != NavMeshPathStatus.PathComplete) return false;
+            if (GetPathLength(path) > maxNavPathLength) return false;
+
+            return true;
+        }
+
+        private float GetPathLength(NavMeshPath path)
+        {
+            float total = 0;
+            if (path.corners.Length < 2) return total;
+            for (int i = 0; i < path.corners.Length - 1; i++)
+            {
+                total += Vector3.Distance(path.corners[i], path.corners[i + 1]);
+            }
+
+            return total;
+        }
+
         private bool InteractWithComponent()
         {
             RaycastHit[] hits = RaycastAllSorted();
@@ -212,31 +218,35 @@ namespace Game.Control
         //     return false;
         // }
 
-        // private bool RaycastNavMesh(out Vector3 target)
-        // {
-        //     target = new Vector3();
+        /*
+        private bool InteractWithPickups()
+        {
+            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            foreach (RaycastHit hit in hits)
+            {
+                WeaponPickup target = hit.transform.GetComponent<WeaponPickup>();
+                if (target == null)
+                {
+                    continue;
+                }
 
-        //     RaycastHit hit;
-        //     bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
-        //     if (!hasHit) return false;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    GetComponent<Fighter>().EquipWeapon(target.GetWeapon());
+                    Destroy(target.gameObject);
+                }
+                return true;
+            }
+            return false;
+        }*/
 
-        //     NavMeshHit navMeshHit;
-        //     bool hasCastToNavMesh = NavMesh.SamplePosition(
-        //         hit.point, out navMeshHit, maxNavMeshProjectionDistance, NavMesh.AllAreas);
-        //     if (!hasCastToNavMesh) return false;
 
-        //     target = navMeshHit.position;
-
-        //     return true;
-        // }
-        //--------------------------------------------
 
         private static Ray GetMouseRay()
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
 
-        // cursor method-----------------------------------------
         private void SetCursor(CursorType type)
         {
             CursorMapping mapping = GetCursorMapping(type);

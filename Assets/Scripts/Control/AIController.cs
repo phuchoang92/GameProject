@@ -105,7 +105,7 @@ namespace Game.Control
             }
             if (timeSinceArrivedAtWaypoint > waypointDwellTime)
             {
-                mover.StartMoveAction(nextPosition);
+                mover.StartMoveAction(nextPosition, 1f);
             }
             isAggrevated = false;
         }

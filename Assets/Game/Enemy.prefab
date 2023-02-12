@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 4292082740582030214}
+      objectReference: {fileID: 4136181596771604421}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: 
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -113,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: Game.Control.AIController, Assembly-CSharp
+      value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1215410126270244628, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -123,8 +123,21 @@ PrefabInstance:
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8449434619305755934, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095131242653961619, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: da4f5695bff34bf4b88959334d31f55f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+--- !u!82 &4136181596771604421 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9095131242653961619, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
+  m_PrefabInstance: {fileID: 5142774951600069206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5715793352856130091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 579941082203244669, guid: b23d3cf2716e11846b43febccce6a16d, type: 3}
