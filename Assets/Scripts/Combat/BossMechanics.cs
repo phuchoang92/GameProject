@@ -2,17 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossMechanics : MonoBehaviour
+namespace Game.Combat
 {
-    // Start is called before the first frame update
-    void Start()
+    public class BossMechanics : MonoBehaviour
     {
-        
-    }
+        [SerializeField] WeaponConfig rangedWeapon;
+        [SerializeField] WeaponConfig meleeWeapon;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Fighter fighter;
+        private void Awake()
+        {
+            fighter= GetComponent<Fighter>();
+            fighter.EquipWeapon(rangedWeapon);
+        }
+
+        private void ChangeWeapon()
+        {
+            if (isInMeleeRange())
+            {
+                fighter.EquipWeapon(meleeWeapon);
+            }
+            else
+            {
+                fighter.EquipWeapon(rangedWeapon);
+            }
+        }
+        private bool isInMeleeRange()
+        {
+            return Vector3.Distance(transform.position, fighter.GetTarget().transform.position) < meleeWeapon.GetRange();
+        }
+        private void Update()
+        {
+            if(fighter.GetTarget()!=null)
+            {
+                ChangeWeapon();
+            }
+        }
     }
 }

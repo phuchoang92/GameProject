@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aeda86a0b05b6648a4a95afb53cf351, type: 3}
   m_Name: Boss FIre
   m_EditorClassIdentifier: 
-  weapon: {fileID: 2196788836859579013, guid: b027aebe825a93c47afe64d68a7156a6, type: 3}
-  animatorOverride: {fileID: 22100000, guid: b0f7876c6ebbe364da90beb92154a28d, type: 2}
+  weapon: {fileID: 0}
+  animatorOverride: {fileID: 22100000, guid: ee49ea4c670bf5d48a1bc0ce5c46ed9f, type: 2}
   weaponDamage: 16
   weaponPercentageBuff: 0
   weaponRange: 8
