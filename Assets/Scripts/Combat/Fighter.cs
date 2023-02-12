@@ -65,7 +65,6 @@ namespace Game.Combat
             {
                 if (weapon == defaultWeapon)
                 {
-                    print(gameObject.name + currentWeapon.name);
                     defaultWeaponInModel.SetActive(false);
                 }
                 else
@@ -122,6 +121,7 @@ namespace Game.Combat
 
             if (currentWeapon.GetUsage() != -1)
             {
+                print("Change to default");
                 numberOfHit = numberOfHit + 1;
                 if (numberOfHit == currentWeapon.GetUsage())
                 {
