@@ -74,6 +74,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4292082740582030214, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: chaseDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5715793352856130091, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: m_Name
       value: BOSS
@@ -190,3 +194,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8891a4342380f42a9ce694cd21416b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangedWeapon: {fileID: 11400000, guid: 86a02e1c0e3b9ad4b826edc1c4569a1c, type: 2}
+  meleeWeapon: {fileID: 11400000, guid: 640be5adae6b28548a5db969808e8f0d, type: 2}
