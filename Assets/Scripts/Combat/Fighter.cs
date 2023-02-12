@@ -6,6 +6,7 @@ using UnityEngine;
 using Game.Stats;
 using System.Collections.Generic;
 using Game.Movement;
+using Unity.VisualScripting;
 
 namespace Game.Combat
 {
@@ -15,6 +16,7 @@ namespace Game.Combat
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] WeaponConfig defaultWeapon = null;
+        [SerializeField] GameObject defaultWeaponInModel = null;
 
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
@@ -58,6 +60,19 @@ namespace Game.Combat
             numberOfHit = 0;
             Animator animator = GetComponent<Animator>();
             currentWeapon.Spawn(rightHandTransform,leftHandTransform, animator);
+
+            if (defaultWeaponInModel != null)
+            {
+                if (weapon == defaultWeapon)
+                {
+                    print(gameObject.name + currentWeapon.name);
+                    defaultWeaponInModel.SetActive(false);
+                }
+                else
+                {
+                    defaultWeaponInModel.SetActive(true);
+                }
+            }
         }
 
         public Health GetTarget()

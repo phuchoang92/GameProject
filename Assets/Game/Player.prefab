@@ -2306,6 +2306,7 @@ MonoBehaviour:
   rightHandTransform: {fileID: 697550354037292813}
   leftHandTransform: {fileID: 2725918034933343167}
   defaultWeapon: {fileID: 11400000, guid: fe77c8144f8ddce41b37c2d853061487, type: 2}
+  defaultWeaponInModel: {fileID: 995598826287383342}
 --- !u!114 &3378155143741807951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,6 +2333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthRegenPercentage: 5
+  selfRegenTime: 3
   takeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -2428,7 +2430,7 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: cecad95c851b97f40b105b30b0bfede3, type: 3}
     hotspot: {x: 0, y: 0}
   maxNavMeshProjectionDistance: 1
-  raycastRadius: 1
+  raycastRadius: 0.5
   maxNavPathLength: 40
 --- !u!114 &89418363154492225
 MonoBehaviour:
