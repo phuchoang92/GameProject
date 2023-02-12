@@ -16,6 +16,7 @@ namespace Game.Attributes
     {
         [SerializeField] float health = 100f;
         [SerializeField] float healthRegenPercentage = 5f;
+        [SerializeField] float selfRegenTime = 3f;
         [SerializeField] TakeDamageEvent takeDamage;
         [SerializeField] float expReward = 10f;
         [SerializeField] UnityEvent onDie;
@@ -31,22 +32,10 @@ namespace Game.Attributes
         private bool isDying = false;
         private bool isRestored = false;
         private float maxHealth;
-        private Coroutine coroutine;
-        private void Awake()
-        {
+        float timeSinceSelfRegen = 0;
 
-            if (gameObject.tag == "Player")
-            {
-                print("Awake");
-                if (coroutine == null) 
-                { 
-                    coroutine = StartCoroutine(SelfRegen());
-                }
-            }
-        }
         private void Start()
         {
-            print("Start");
             if (health <= 0)
             {
                 isDying = true;
@@ -126,12 +115,16 @@ namespace Game.Attributes
             GetComponent<Animator>().SetTrigger("die");
             GetComponent<ActionScheduler>().CancelAction();
         }
-        private IEnumerator SelfRegen()
+        public void SelfRegen()
         {
-            while (true)
+            if (health < maxHealth && timeSinceSelfRegen>selfRegenTime)
             {
                 health = MathF.Min(health + maxHealth*healthRegenPercentage / 100, maxHealth);
-                yield return new WaitForSeconds(3f);
+                timeSinceSelfRegen = 0;
+            }
+            else
+            {
+                timeSinceSelfRegen += Time.deltaTime;
             }
         }
         private void RegenerateHealth()

@@ -34,8 +34,13 @@ namespace Game.Control
 
         public void Update()
         {   
+
             CheckSpecialAbilityKeys();
             if (health.IsDead()) return;
+            else
+            {
+                health.SelfRegen();
+            }
             if (InteractWithUI()) return;
             if (InteractWithComponent()) return;
             if (InteractWithCombat()) return;
