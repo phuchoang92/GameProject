@@ -1,3 +1,4 @@
+using RPG.Saving;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace Game.Stats
 {
-    public class BaseStats : MonoBehaviour
+    public class BaseStats : MonoBehaviour, ISaveable
     {
         [Range(1,10)]
         [SerializeField] int currentLevel = 1;
@@ -16,6 +17,7 @@ namespace Game.Stats
         [SerializeField] GameObject levelUpParticleEffect = null;
 
         public event Action OnLevelUp;
+        bool isRestored = false;
         Experience experience = null;
         private void Awake()
         {
@@ -23,7 +25,7 @@ namespace Game.Stats
         }
         private void Start()
         {
-            if(GetComponent<Experience>()!= null)
+            if(!isRestored && GetComponent<Experience>()!= null)
             {
                 currentLevel = CalculateLevel();
             }
@@ -117,6 +119,17 @@ namespace Game.Stats
         public bool ProgressionCheck()
         { 
             return progression != null; 
+        }
+
+        public object CaptureState()
+        {
+            return currentLevel;
+        }
+
+        public void RestoreState(object state)
+        {
+            currentLevel = (int)state;
+            isRestored = true;
         }
     }
 }
