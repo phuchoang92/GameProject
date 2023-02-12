@@ -13,11 +13,17 @@ namespace GameDevTV.Inventories
         [SerializeField] InventoryItem item = null;
         [SerializeField] int number = 1;
 
+        bool isRestored = false;
+
         // LIFECYCLE METHODS
-        private void Awake()
+        private void Start()
         {
-            // Spawn in Awake so can be destroyed by save system after.
-            SpawnPickup();
+            if (!isRestored)
+            {
+                // Spawn in Awake so can be destroyed by save system after.
+                // But Awake starts before getting things restored so put it in Start instead
+                SpawnPickup();
+            }
         }
 
         // PUBLIC
@@ -63,6 +69,7 @@ namespace GameDevTV.Inventories
         void ISaveable.RestoreState(object state)
         {
             bool shouldBeCollected = (bool)state;
+            isRestored = true;
 
             if (shouldBeCollected && !isCollected())
             {
