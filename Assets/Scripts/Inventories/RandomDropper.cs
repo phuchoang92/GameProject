@@ -8,7 +8,7 @@ namespace Game.Inventories
 {
     public class RandomDropper : ItemDropper
     {
-        [SerializeField] float scatterDistance = 1;
+        [SerializeField] float scatterDistance = 2;
         [SerializeField] InventoryItem[] dropLibrary;
         const int ATTEMPTS = 5;
 
