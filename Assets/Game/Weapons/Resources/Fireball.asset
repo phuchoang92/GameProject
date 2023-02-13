@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 00c05cd3-7c03-47a2-b3db-fc71c6544fab
   displayName: Fireball
   description: 
-  icon: {fileID: 21300000, guid: 881798b77426a8f47b533dcc4767e9e5, type: 3}
+  icon: {fileID: 21300000, guid: 3997285937d624546b9eb5b50e51c39d, type: 3}
   pickup: {fileID: 5633996538376055013, guid: 98e21a5173afe0a459ef4fb24f3ed6c0, type: 3}
   stackable: 0
   allowedEquipLocation: 5
@@ -26,4 +26,4 @@ MonoBehaviour:
   weaponRange: 15
   isRightHanded: 1
   projectile: {fileID: 4667082644077253787, guid: fc4a80030632ce949ad9fcfd437cc923, type: 3}
-  numberOfUsage: 1
+  numberOfUsage: 10
