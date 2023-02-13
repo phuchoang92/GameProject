@@ -66,7 +66,7 @@ namespace Game.Stats
             return GetBaseStat(stats)*(1+GetPercentageModifier(stats)/100) + GetAdditiveModifier(stats);
         }
 
-        private float GetPercentageModifier(Stats stats)
+        public float GetPercentageModifier(Stats stats)
         {
             float total = 0;
             foreach (IModifier modifier in GetComponents<IModifier>())
@@ -84,7 +84,7 @@ namespace Game.Stats
             return progression.GetStat(stats, characterClass, currentLevel);
         }
 
-        private float GetAdditiveModifier(Stats stats)
+        public float GetAdditiveModifier(Stats stats)
         {
             float total = 0;
             foreach(IModifier modifier in GetComponents<IModifier>())

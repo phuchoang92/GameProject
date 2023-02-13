@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aeda86a0b05b6648a4a95afb53cf351, type: 3}
   m_Name: Broadsword
   m_EditorClassIdentifier: 
+  itemID: 8a66bf57-8572-4f20-ba48-fc1f2e0f7b93
+  displayName: Broadsword
+  description: 
+  icon: {fileID: 21300000, guid: fa86e42a52b1e6b4cae30e5d5ec8d05d, type: 3}
+  pickup: {fileID: 7119484214673093496, guid: 5f84ab83339f97740bddc45e2170871b, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   weapon: {fileID: 6584806603305999822, guid: 196b1eb1d26e0984c837b2d0402a7436, type: 3}
   animatorOverride: {fileID: 22100000, guid: 8d6c10c0a0275e64ca3e5c7dfedeffa8, type: 2}
   weaponDamage: 10

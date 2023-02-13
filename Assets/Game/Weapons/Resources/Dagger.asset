@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aeda86a0b05b6648a4a95afb53cf351, type: 3}
   m_Name: Dagger
   m_EditorClassIdentifier: 
+  itemID: 79755123-b9cf-4db2-b8c4-b3b1f66a6107
+  displayName: Dagger
+  description: 
+  icon: {fileID: 21300000, guid: d19901b0ee3c38743a7d383bd484b0b5, type: 3}
+  pickup: {fileID: 6494234044896430859, guid: 7b183cc5a0f4b8d42b58257a3ec1e8e6, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   weapon: {fileID: 493525285443514908, guid: 8b30023852accc446bc252ae3d6992a1, type: 3}
   animatorOverride: {fileID: 22100000, guid: 86866f3e386bf7f43ab3023308ae2676, type: 2}
   weaponDamage: 16

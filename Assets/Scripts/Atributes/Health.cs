@@ -9,6 +9,8 @@ using UnityEngine.Events;
 using GameDevTV.Utils;
 using Unity.VisualScripting;
 using System.Diagnostics;
+using GameDevTV.Inventories;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 namespace Game.Attributes
 {
@@ -33,6 +35,30 @@ namespace Game.Attributes
         private bool isRestored = false;
         private float maxHealth;
         float timeSinceSelfRegen = 0;
+        Equipment equipment;
+
+        private void Awake()
+        {
+            equipment = GetComponent<Equipment>();
+            if (equipment)
+            {
+                equipment.equipmentUpdated += UpdateHealth;
+            }
+        }
+
+        private void UpdateHealth()
+        {
+            BaseStats baseStats = GetComponent<BaseStats>();
+            if (baseStats.ProgressionCheck())
+            {
+                maxHealth = baseStats.GetStat(Stats.Stats.Health); ;
+            }
+            else
+            {
+                maxHealth = maxHealth * (1 + baseStats.GetPercentageModifier(Stats.Stats.Health) / 100) + baseStats.GetAdditiveModifier(Stats.Stats.Health);
+            }
+            health = Mathf.Min(health, maxHealth);
+        }
 
         private void Start()
         {

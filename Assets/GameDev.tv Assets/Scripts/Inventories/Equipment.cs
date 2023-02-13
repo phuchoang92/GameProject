@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
+using System.Collections;
+using Game.Inventories;
 
 namespace GameDevTV.Inventories
 {
@@ -58,6 +60,10 @@ namespace GameDevTV.Inventories
                 equipmentUpdated();
             }
         }
+        public IEnumerable<EquipLocation> GetAllPopulatedSlots()
+        {
+            return equippedItems.Keys;
+        }
 
         // PRIVATE
 
@@ -84,6 +90,7 @@ namespace GameDevTV.Inventories
                 {
                     equippedItems[pair.Key] = item;
                 }
+                
             }
         }
     }
