@@ -21,9 +21,9 @@ MonoBehaviour:
   allowedEquipLocation: 5
   weapon: {fileID: 0}
   animatorOverride: {fileID: 22100000, guid: b0f7876c6ebbe364da90beb92154a28d, type: 2}
-  weaponDamage: 12
+  weaponDamage: 10
   weaponPercentageBuff: 0
-  weaponRange: 15
+  weaponRange: 10
   isRightHanded: 1
   projectile: {fileID: 4667082644077253787, guid: fc4a80030632ce949ad9fcfd437cc923, type: 3}
   numberOfUsage: 10

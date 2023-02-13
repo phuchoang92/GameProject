@@ -249,7 +249,7 @@ MonoBehaviour:
   chaseDistance: 5
   suspicionTIme: 2
   shoutDistance: 5
-  agroCooldownTime: 5
+  agroCooldownTime: 9
   patrolPath: {fileID: 0}
   waypointTolerance: 1
   waypointDwellTime: 2

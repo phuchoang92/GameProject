@@ -13,7 +13,7 @@ namespace Game.Control
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTIme = 2f;
         [SerializeField] float shoutDistance = 5f;
-        [SerializeField] float agroCooldownTime = 5f;
+        [SerializeField] float agroCooldownTime = 10f;
         [SerializeField] PatrolPath patrolPath;
         [SerializeField] float waypointTolerance = 1f;
         [SerializeField] float waypointDwellTime = 2f;

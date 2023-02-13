@@ -141,7 +141,10 @@ namespace Game.Combat
             }
             else
             {
-                target.TakeDamage(gameObject, damage);
+                if (isInRange())
+                {
+                    target.TakeDamage(gameObject, damage);
+                }
             }
 
             if (currentWeapon.GetUsage() != -1)

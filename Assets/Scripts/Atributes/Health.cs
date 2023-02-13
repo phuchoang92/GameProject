@@ -110,6 +110,7 @@ namespace Game.Attributes
             {
                 onDie.Invoke();
                 Die();
+
                 AwardExperience(instigator);
             }
             else
@@ -136,8 +137,8 @@ namespace Game.Attributes
         {
             if (isDying) return;
             isDying = true;
+            GetComponent<ActionScheduler>().CancelAllActions();
             GetComponent<Animator>().SetTrigger("die");
-            GetComponent<ActionScheduler>().CancelAction();
         }
         public void SelfRegen()
         {

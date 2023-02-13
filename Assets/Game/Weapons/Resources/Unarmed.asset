@@ -23,7 +23,7 @@ MonoBehaviour:
   animatorOverride: {fileID: 0}
   weaponDamage: 3
   weaponPercentageBuff: 0
-  weaponRange: 1
+  weaponRange: 0.7
   isRightHanded: 1
   projectile: {fileID: 0}
   numberOfUsage: -1

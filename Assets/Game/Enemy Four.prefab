@@ -16,6 +16,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 11e444db8481d7b4089df5862af5ca1e, type: 2}
     - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: timeBetweenAtk
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: leftHandTransform
       value: 
       objectReference: {fileID: 8882067988467174313}

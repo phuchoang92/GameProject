@@ -24,5 +24,12 @@ namespace Game.Core
         {
             StartAction(null);
         }
+        public void CancelAllActions()
+        {
+            foreach(IAction action in GetComponents<IAction>())
+            {
+                action.Cancel();
+            }
+        }
     }
 }
