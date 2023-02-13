@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class SoundManageMent : MonoBehaviour
 {
-     void Start()
+    void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
+
+
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
     }
 }

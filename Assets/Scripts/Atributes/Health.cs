@@ -40,7 +40,6 @@ namespace Game.Attributes
 
         private void Awake()
         {
-            print("Awake");
             equipment = GetComponent<Equipment>();
             baseStats = GetComponent<BaseStats>();
             if (equipment)
@@ -54,23 +53,20 @@ namespace Game.Attributes
             else
             {
                 maxHealth = baseStats.GetStat(Stats.Stats.Health);
+                health = maxHealth;
             }
 
-            print(gameObject.name + ": " + maxHealth.ToString());
         }
 
         private void UpdateHealth()
         {
             maxHealth = baseStats.GetStat(Stats.Stats.Health); 
-            print(gameObject.name + ": " + maxHealth.ToString());
-            
             
             health = Mathf.Min(health, maxHealth);
         }
 
         private void Start()
         {
-            print("Call start");
             if (health <= 0)
             {
                 isDying = true;
@@ -85,8 +81,6 @@ namespace Game.Attributes
             {
                 health = maxHealth;
             }
-
-            print(gameObject.name + ": " + maxHealth.ToString());
         }
 
         private void OnEnable()
@@ -183,7 +177,6 @@ namespace Game.Attributes
 
         public void RestoreState(object state)
         {
-            print("Call restore");
             isRestored = true;
             health = (float)state;
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Environment
   - NPC
+  - Music
   layers:
   - Default
   - TransparentFX
