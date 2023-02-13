@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManageMent : MonoBehaviour
 {
-     void Awake()
+     void Start()
     {
         DontDestroyOnLoad(transform.gameObject);
     }

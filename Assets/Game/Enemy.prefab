@@ -227,11 +227,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b031b89de65d34bb81a96c3c0e85b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scatterDistance: 1
+  scatterDistance: 2
   dropLibrary:
   - {fileID: 11400000, guid: 986cd9620270b784294333981d9f3ea7, type: 2}
   - {fileID: 11400000, guid: f0da05337c0eee44d9cfb0ea56217af2, type: 2}
   - {fileID: 11400000, guid: 986cd9620270b784294333981d9f3ea7, type: 2}
+  - {fileID: 11400000, guid: 9b1d8996ed51388458e94907e880fc3b, type: 2}
+  - {fileID: 11400000, guid: df5d7c9d703c92a42aab2b62f1967a23, type: 2}
 --- !u!114 &4292082740582030214
 MonoBehaviour:
   m_ObjectHideFlags: 0

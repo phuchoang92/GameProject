@@ -29,60 +29,64 @@ namespace Game.Attributes
 
         }
 
-        LazyValue<float> healthPoints;
+        // LazyValue<float> healthPoints;
 
         private bool isDying = false;
         private bool isRestored = false;
         private float maxHealth;
         float timeSinceSelfRegen = 0;
         Equipment equipment;
+        BaseStats baseStats;
 
         private void Awake()
         {
+            print("Awake");
             equipment = GetComponent<Equipment>();
+            baseStats = GetComponent<BaseStats>();
             if (equipment)
             {
                 equipment.equipmentUpdated += UpdateHealth;
             }
+            if (!baseStats.ProgressionCheck())
+            {
+                maxHealth = health;
+            }
+            else
+            {
+                maxHealth = baseStats.GetStat(Stats.Stats.Health);
+            }
+
+            print(gameObject.name + ": " + maxHealth.ToString());
         }
 
         private void UpdateHealth()
         {
-            BaseStats baseStats = GetComponent<BaseStats>();
-            if (baseStats.ProgressionCheck())
-            {
-                maxHealth = baseStats.GetStat(Stats.Stats.Health); ;
-            }
-            else
-            {
-                maxHealth = maxHealth * (1 + baseStats.GetPercentageModifier(Stats.Stats.Health) / 100) + baseStats.GetAdditiveModifier(Stats.Stats.Health);
-            }
+            maxHealth = baseStats.GetStat(Stats.Stats.Health); 
+            print(gameObject.name + ": " + maxHealth.ToString());
+            
+            
             health = Mathf.Min(health, maxHealth);
         }
 
         private void Start()
         {
+            print("Call start");
             if (health <= 0)
             {
                 isDying = true;
                 SetCharacterActive(!isDying);
+                return;
             }
-            else
+            if (baseStats.ProgressionCheck())
             {
-                if (GetComponent<BaseStats>().ProgressionCheck())
-                {
-                    maxHealth = GetComponent<BaseStats>().GetStat(Stats.Stats.Health); ;
-                }
-                else
-                {
-                    maxHealth = health;
-                }
-
-                if (!isRestored && GetComponent<BaseStats>().ProgressionCheck())
-                {
-                    health = GetComponent<BaseStats>().GetStat(Stats.Stats.Health);
-                }
+                maxHealth = baseStats.GetStat(Stats.Stats.Health);
             }
+            if (!isRestored)
+            {
+                health = maxHealth;
+            }
+
+            print(gameObject.name + ": " + maxHealth.ToString());
         }
 
         private void OnEnable()
@@ -179,6 +183,7 @@ namespace Game.Attributes
 
         public void RestoreState(object state)
         {
+            print("Call restore");
             isRestored = true;
             health = (float)state;
 
@@ -195,7 +200,6 @@ namespace Game.Attributes
         public void Heal(float healthToRestore)
         {
             health = Mathf.Min(health + healthToRestore, GetMaxHealhPoints());
-
         }
     }
 }

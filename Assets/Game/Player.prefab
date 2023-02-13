@@ -2430,7 +2430,7 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: cecad95c851b97f40b105b30b0bfede3, type: 3}
     hotspot: {x: 0, y: 0}
   maxNavMeshProjectionDistance: 1
-  raycastRadius: 0.5
+  raycastRadius: 0.07
   maxNavPathLength: 40
 --- !u!114 &89418363154492225
 MonoBehaviour:
@@ -2523,7 +2523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b031b89de65d34bb81a96c3c0e85b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scatterDistance: 1
+  scatterDistance: 2
+  dropLibrary: []
 --- !u!1 &7708593670644011152
 GameObject:
   m_ObjectHideFlags: 0

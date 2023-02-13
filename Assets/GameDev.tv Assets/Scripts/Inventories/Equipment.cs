@@ -66,7 +66,10 @@ namespace GameDevTV.Inventories
         }
 
         // PRIVATE
-
+        private void Awake()
+        {
+            equipmentUpdated();
+        }
         object ISaveable.CaptureState()
         {
             var equippedItemsForSerialization = new Dictionary<EquipLocation, string>();
