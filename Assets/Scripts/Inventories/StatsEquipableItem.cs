@@ -34,7 +34,7 @@ namespace Game.Inventories
 
         public IEnumerable<float> GetPercentageModifiers(Stats.Stats stats)
         {
-            foreach (var modifier in additiveModifiers)
+            foreach (var modifier in percentageModifiers)
             {
                 if (modifier.stats == stats)
                 {
