@@ -1,3 +1,4 @@
+using Game.Control;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -77,6 +78,11 @@ namespace RPG.Saving
 
         private void RestoreState(Dictionary<string, object> state)
         {
+            foreach (ClickablePickup pickup in FindObjectsOfType<ClickablePickup>())
+            {
+                Destroy(pickup.gameObject);
+            }
+
             foreach (SaveableEntity saveable in FindObjectsOfType<SaveableEntity>())
             {
                 string id = saveable.GetUniqueIdentifier();
