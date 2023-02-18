@@ -23,5 +23,15 @@ namespace InventoryExample.UI
                 uiContainer.SetActive(!uiContainer.activeSelf);
             }
         }
+
+        protected KeyCode GetToggleKey()
+        {
+            return toggleKey;
+        }
+
+        protected GameObject GetUIContainer()
+        {
+            return uiContainer;
+        }
     }
 }
