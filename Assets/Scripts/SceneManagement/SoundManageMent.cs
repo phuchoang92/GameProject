@@ -16,4 +16,5 @@ public class SoundManageMent : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
     }
+
 }
