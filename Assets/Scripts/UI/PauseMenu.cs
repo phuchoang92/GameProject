@@ -1,14 +1,30 @@
 using InventoryExample.UI;
+using RPG.Saving;
 using RPG.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
-public class PauseMenu : ShowHideUI
+public class PauseMenu : ShowHideUI, ISaveable
 {
     public static bool GameIsPaused = false;
+    public AudioMixer audioMixer;
+    [SerializeField] Slider slider;
 
+    SavingWrapper savingWrapper;
+    float currentVolume=0f;
+    private void Awake()
+    {
+        savingWrapper = GameObject.FindObjectOfType<SavingWrapper>();
+    }
+    private void Start()
+    {
+        GetUIContainer().SetActive(false);
+        SetVolume(currentVolume);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -39,14 +55,32 @@ public class PauseMenu : ShowHideUI
 
     public void SetVolume(float volume)
     {
-        print(volume);
+        audioMixer.SetFloat("Volume", volume);
+        currentVolume = volume;
     }
     public void Load()
     {
-        print("Press load");
+        savingWrapper.Load();
+        Resume();
     }
     public void Save()
     {
-        print("Press save");
+        savingWrapper.Save();
+    }
+    public void Quit()
+    {
+        Application.Quit();
+        Debug.Log("quitting");
+    }
+
+    public object CaptureState()
+    {
+        return currentVolume;
+    }
+
+    public void RestoreState(object state)
+    {
+        currentVolume = (float)state;
+        slider.value = currentVolume;
     }
 }

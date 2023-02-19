@@ -16773,10 +16773,10 @@ AudioSource:
   m_GameObject: {fileID: 560701112}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e6250dea0e952184bb7d8219e738537e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5e747b1a8b8fa5349a118ce6fb7aced6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -69304,6 +69304,10 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 31.474659
       objectReference: {fileID: 0}
+    - target: {fileID: 5262143093083954801, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
+      propertyPath: uniqueIdentifier
+      value: 77a5c02c-b7a6-4842-83c5-718701b0c2d8
+      objectReference: {fileID: 0}
     - target: {fileID: 5276079904771791449, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
       propertyPath: cursorMappings.Array.size
       value: 6
@@ -69806,7 +69810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8273748188653239264, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -662.35
+      value: -662.3499
       objectReference: {fileID: 0}
     - target: {fileID: 8273762233243501202, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
       propertyPath: m_AnchorMax.y
