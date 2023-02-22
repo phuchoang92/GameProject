@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Game.Movement;
 using Unity.VisualScripting;
 using GameDevTV.Inventories;
+using Game.Inventories;
 
 namespace Game.Combat
 {
@@ -153,6 +154,7 @@ namespace Game.Combat
                 numberOfHit = numberOfHit + 1;
                 if (numberOfHit == currentWeapon.GetUsage())
                 {
+                    GetComponent<StatsEquipment>().RemoveItem(EquipLocation.Weapon);
                     EquipWeapon(defaultWeapon);
                 }
             }

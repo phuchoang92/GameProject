@@ -4022,6 +4022,14 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 1118820339104872493}
+    - target: {fileID: 6782402230663953123, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
+      propertyPath: currentLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782402230663953123, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
+      propertyPath: characterClass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7339348005730560809, guid: 270bba75299c7eb4aa0f45c3c4fd2390, type: 3}
       propertyPath: m_Name
       value: Enemy Two
@@ -9887,6 +9895,10 @@ PrefabInstance:
       value: Portal
       objectReference: {fileID: 0}
     - target: {fileID: 1779114431277129444, guid: 5d327b76431d9fe42a2d1016ce211114, type: 3}
+      propertyPath: destination
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779114431277129444, guid: 5d327b76431d9fe42a2d1016ce211114, type: 3}
       propertyPath: sceneToLoad
       value: 1
       objectReference: {fileID: 0}
@@ -10392,6 +10404,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 784783571}
     m_Modifications:
+    - target: {fileID: 5058530256287244721, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
+      propertyPath: currentLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7403057818539792853, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: uniqueIdentifier
       value: ab017ef0-21d7-4928-982f-526a576c59d5
@@ -14294,7 +14310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8273748188653239264, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -662.34973
+      value: -662.3497
       objectReference: {fileID: 0}
     - target: {fileID: 8273762233243501202, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
       propertyPath: m_AnchorMax.y
