@@ -2514,8 +2514,12 @@ PrefabInstance:
       value: Portal
       objectReference: {fileID: 0}
     - target: {fileID: 1779114431277129444, guid: 5d327b76431d9fe42a2d1016ce211114, type: 3}
+      propertyPath: destination
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779114431277129444, guid: 5d327b76431d9fe42a2d1016ce211114, type: 3}
       propertyPath: sceneToLoad
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1779114431277129446, guid: 5d327b76431d9fe42a2d1016ce211114, type: 3}
       propertyPath: m_RootOrder
@@ -2575,11 +2579,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4178511317956029454, guid: 5d327b76431d9fe42a2d1016ce211114, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.6
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 4178511317956029454, guid: 5d327b76431d9fe42a2d1016ce211114, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.69
+      value: -10.86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d327b76431d9fe42a2d1016ce211114, type: 3}
