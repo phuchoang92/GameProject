@@ -88,7 +88,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 640be5adae6b28548a5db969808e8f0d, type: 2}
     - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: timeBetweenAtk
-      value: 2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: leftHandTransform
@@ -164,7 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8401437623922934753, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: currentLevel
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8401437623922934753, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: characterClass
