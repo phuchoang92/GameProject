@@ -74,6 +74,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3060899141308536865, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 1904845059773820941, guid: 20be5046225012740b65cb4d194e3fa9, type: 3}
     - target: {fileID: 4292082740582030214, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: chaseDistance
       value: 8.51
@@ -88,7 +92,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 640be5adae6b28548a5db969808e8f0d, type: 2}
     - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: timeBetweenAtk
-      value: 1.8
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: leftHandTransform
@@ -157,6 +161,22 @@ PrefabInstance:
     - target: {fileID: 5715793352856130103, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305267627604720962, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305267627604720962, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305267627604720962, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305267627604720962, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Game.Inventories.RandomDropper, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6389679597950343278, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: maxSpeed

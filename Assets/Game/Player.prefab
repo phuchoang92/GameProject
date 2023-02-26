@@ -2181,6 +2181,8 @@ GameObject:
   - component: {fileID: 2326544062270547181}
   - component: {fileID: 8278519334920898647}
   - component: {fileID: 1083038521109820849}
+  - component: {fileID: 5643899151326342696}
+  - component: {fileID: 1488071662886612725}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2525,6 +2527,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scatterDistance: 2
   dropLibrary: []
+--- !u!114 &5643899151326342696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7519543703795926610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6886baeb0b2f44a82c017ce03e3ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 1904845059773820941, guid: 4613a06dc52738d4c907767595601dd8, type: 3}
+--- !u!114 &1488071662886612725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7519543703795926610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701966f94008dbf45916fa440e87030b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
 --- !u!1 &7708593670644011152
 GameObject:
   m_ObjectHideFlags: 0
