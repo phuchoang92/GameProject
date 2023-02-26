@@ -74,6 +74,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3060899141308536865, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 1904845059773820941, guid: 20be5046225012740b65cb4d194e3fa9, type: 3}
     - target: {fileID: 4292082740582030214, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: chaseDistance
       value: 8.51
@@ -212,16 +216,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangedWeapon: {fileID: 11400000, guid: 86a02e1c0e3b9ad4b826edc1c4569a1c, type: 2}
   meleeWeapon: {fileID: 11400000, guid: 640be5adae6b28548a5db969808e8f0d, type: 2}
---- !u!114 &8202973339437907073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7904942895487727102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d6886baeb0b2f44a82c017ce03e3ee4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 1904845059773820941, guid: 20be5046225012740b65cb4d194e3fa9, type: 3}
