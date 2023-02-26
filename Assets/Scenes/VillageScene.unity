@@ -3773,7 +3773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9076713348972752999, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.46
+      value: 32.5
       objectReference: {fileID: 0}
     - target: {fileID: 9076713348972752999, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3781,7 +3781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9076713348972752999, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 40.16
+      value: 38.72
       objectReference: {fileID: 0}
     - target: {fileID: 9076713348972752999, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10580,7 +10580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9076713348972752999, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.27
+      value: 20.52
       objectReference: {fileID: 0}
     - target: {fileID: 9076713348972752999, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10588,7 +10588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9076713348972752999, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 36.61
+      value: 36.26
       objectReference: {fileID: 0}
     - target: {fileID: 9076713348972752999, guid: a47f6a3f240d3a7409f31aa9c6d38c3e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14460,7 +14460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8273748188653239264, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -662.3501
+      value: -662.3499
       objectReference: {fileID: 0}
     - target: {fileID: 8273762233243501202, guid: 3a7a068d3d1482b4ab02163cf058bcfa, type: 3}
       propertyPath: m_AnchorMax.y
