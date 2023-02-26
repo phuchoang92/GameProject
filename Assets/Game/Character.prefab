@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 429917159109669787}
   - component: {fileID: 733076409679099273}
   - component: {fileID: 3731559480767371703}
+  - component: {fileID: 7864605596519514743}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -176,6 +177,7 @@ MonoBehaviour:
   rightHandTransform: {fileID: 0}
   leftHandTransform: {fileID: 0}
   defaultWeapon: {fileID: 11400000, guid: 57a795c74040c484e871fa98d1cac8f4, type: 2}
+  defaultWeaponInModel: {fileID: 0}
 --- !u!114 &579941082203244644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  healthRegenPercentage: 5
+  selfRegenTime: 3
   takeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -257,6 +261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  maxSpeed: 6
+  maxNavPathLength: 40
 --- !u!54 &429917159109669787
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -303,6 +309,19 @@ MonoBehaviour:
   characterClass: 1
   progression: {fileID: 11400000, guid: 2b47d3352c34fdc4c9bccd9de92e0dc9, type: 2}
   levelUpParticleEffect: {fileID: 0}
+--- !u!114 &7864605596519514743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579941082203244669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6886baeb0b2f44a82c017ce03e3ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
 --- !u!1 &3571788146061765199
 GameObject:
   m_ObjectHideFlags: 0

@@ -88,7 +88,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 640be5adae6b28548a5db969808e8f0d, type: 2}
     - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: timeBetweenAtk
-      value: 1.8
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: leftHandTransform
@@ -158,6 +158,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6305267627604720962, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305267627604720962, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305267627604720962, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305267627604720962, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Game.Inventories.RandomDropper, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6389679597950343278, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: maxSpeed
       value: 5.5
@@ -196,3 +212,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangedWeapon: {fileID: 11400000, guid: 86a02e1c0e3b9ad4b826edc1c4569a1c, type: 2}
   meleeWeapon: {fileID: 11400000, guid: 640be5adae6b28548a5db969808e8f0d, type: 2}
+--- !u!114 &8202973339437907073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7904942895487727102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6886baeb0b2f44a82c017ce03e3ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 1904845059773820941, guid: 20be5046225012740b65cb4d194e3fa9, type: 3}

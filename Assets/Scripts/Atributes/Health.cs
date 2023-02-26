@@ -138,6 +138,7 @@ namespace Game.Attributes
             if (isDying) return;
             isDying = true;
             GetComponent<ActionScheduler>().CancelAllActions();
+            GetComponent<DialogueTrigger>().TriggerDialogue();
             GetComponent<Animator>().SetTrigger("die");
         }
         public void SelfRegen()
