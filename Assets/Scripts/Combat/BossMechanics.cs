@@ -1,3 +1,6 @@
+using Game.Control;
+using Game.Movement;
+using RPG.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,5 +41,6 @@ namespace Game.Combat
                 ChangeWeapon();
             }
         }
+
     }
 }
