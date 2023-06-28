@@ -74,10 +74,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4292082740582030214, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: chaseDistance
+      value: 6.84
+      objectReference: {fileID: 0}
     - target: {fileID: 5715793352856130091, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: m_Name
       value: Strong Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: fe77c8144f8ddce41b37c2d853061487, type: 2}
     - target: {fileID: 5715793352856130099, guid: dfc381b5d74ee3144b20490ff9c4a38c, type: 3}
       propertyPath: leftHandTransform
       value: 
